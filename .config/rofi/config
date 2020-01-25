@@ -1,0 +1,3 @@
+rofi.theme: config.rasi
+#rofi.theme: /usr/share/fori/themes/solarised-darker.rasi
+rofi.blur-background: true
