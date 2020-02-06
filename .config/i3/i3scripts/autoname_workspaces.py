@@ -100,9 +100,9 @@ WINDOW_ICONS = {
     'spotify': fa.icons['music'],  # could also use the 'spotify' icon
     'st': fa.icons['terminal'],
     'steam': fa.icons['steam'],
-    'subl': fa.icons['file-alt'],
-    'subl3': fa.icons['file-alt'],
-    'sublime_text': fa.icons['file-alt'],
+    'subl': fa.icons['code'],
+    'subl3': fa.icons['code'],
+    'sublime_text': fa.icons['code'],
     'thunar': fa.icons['copy'],
     'thunderbird': fa.icons['envelope'],
     'totem': fa.icons['play'],
