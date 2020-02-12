@@ -34,10 +34,9 @@ wifi-colour = #c9925b
 battery-colour = #e0d1b1 
 
 active-unfocused-workspace = #787671
-#active-focused-workspace = #ea994d
-active-focused-workspace = #73bf85
+active-focused-workspace = #ea994d
 active-focused-foreground = #000000
-active-unfocused-foreground = #000000
+active-unfocused-foreground = #ffffff
 
 [bar/example]
 monitor = ${env:MONITOR:}

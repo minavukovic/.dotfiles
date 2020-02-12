@@ -1,4 +1,4 @@
-set $background "polygons.jpg"
+set $background "milesmorales2.jpg"
 # background
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
@@ -10,7 +10,7 @@ set $mod Mod4
 font pango:GoogleSans-Regular 10
 
 # Gaps
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 15
 gaps outer 2
 
@@ -196,8 +196,8 @@ mode "resize" {
 
 #bindsym $mod+r mode "resize"
 bindsym $mod+Shift+y resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+u resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+i resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 
 

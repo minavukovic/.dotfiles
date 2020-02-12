@@ -156,11 +156,14 @@ alias i3="vi ~/.config/i3/config"
 alias poly="vi ~/.config/polybar/config"
 alias brc="vi ~/.bashrc"
 alias home="cd ~"
-alias sch="cd ~/school/"
 alias down="cd ~/Downloads"
 alias conf="cd ~/.config"
 alias src="source ~/.bashrc"
 alias doit="sudo !!"
+
+sch() {
+	cd ~/school/$1
+} 
 #####################################################
 
 # better yaourt colors
