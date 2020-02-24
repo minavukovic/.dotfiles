@@ -27,25 +27,11 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-;time-colour = #f4c242
-;date-colour = #e84d47
-;sound-colour = #6fbbb6
-;wifi-colour = #c9925b
-;battery-colour = #e0d1b1 
-
-# yellow, green, blue, orange, red scheme
-;time-colour = #f4c242
-;date-colour = #2eb367
-;sound-colour = #4499a4
-;wifi-colour = #F76D1F
-;battery-colour = #EF3F34
-
-# red progression scheme
-time-colour = #f3f7a0
-date-colour =  #FFC300 
-sound-colour = #FF5733 
-wifi-colour = #C70000
-battery-colour = #900C3F 
+time-colour = #f4c242
+date-colour = #e84d47
+sound-colour = #a259c9
+wifi-colour = #c9925b
+battery-colour = #e0d1b1 
 
 active-unfocused-workspace = #787671
 active-focused-workspace = #ea994d
@@ -55,7 +41,7 @@ active-unfocused-foreground = #ffffff
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 21
+height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
@@ -74,8 +60,8 @@ border-color = #00000000
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 3
+module-margin-right = 3
 
 font-0 = GoogleSans_Regular:pixelsize=10;3
 #font-0 = Hack:pixelsize=10;3
@@ -90,10 +76,9 @@ font-4 = Hack:pixelsize=10;3
 
 modules-left = bspwm i3 xwindow
 ;modules-center = date
-modules-center = time 
+modules-center = time
 #modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = left0 date left1 pulseaudio left2 wireless-network left3 battery-one battery-zero
-;modules-right = date pulseaudio wireless-network battery-one battery-zero
+modules-right = date pulseaudio wireless-network battery-one battery-zero
 
 tray-position = right
 tray-padding = 2
@@ -113,33 +98,9 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/left0]
-type = custom/text
-content-background = ${colors.background}
-content-foreground = ${colors.date-colour}
-content = "%{T3}%{T-}"
-
-[module/left1]
-type = custom/text
-content-background = ${colors.date-colour}
-content-foreground = ${colors.sound-colour}
-content = "%{T3}%{T-}"
-
-[module/left2]
-type = custom/text
-content-background = ${colors.sound-colour}
-content-foreground = ${colors.wifi-colour}
-content = "%{T3}%{T-}"
-
-[module/left3]
-type = custom/text
-content-background = ${colors.wifi-colour}
-content-foreground = ${colors.battery-colour}
-content = "%{T3}%{T-}"
-
 [module/xwindow]
 type = internal/xwindow
-label = "  %title:0:30:...% "
+label = %title:0:30:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -341,35 +302,31 @@ interval = 5
 date = 
 date-alt = "%Y-%m-%d"
 
-time = "%H:%M  "
-time-alt = "%H:%M:%S  "
+time = "%H:%M "
+time-alt = %H:%M:%S
 
-format-prefix = "   "
-format-prefix-foreground = #000000
-label-foreground = #000000
+format-prefix = 
+format-prefix-foreground = ${colors.time-colour}
+label-foreground = ${colors.time-colour}
 #format-underline = #ed6607
 
 label = %date% %time%
-
-format-background = ${colors.time-colour}
 
 [module/date]
 type = internal/date
 interval = 5
 
 ;date = %A, %d, %b # => long day format
-date = "%A %d %b"
+date = %A %d %b 
 time = %H:%M
 
-format = " %{A:gsimplecal:} <label> %{A} "
+format = %{A:gsimplecal:} <label> %{A}
 format-font = 1
-format-prefix-foreground = #000000
+format-prefix-foreground = ${colors.foreground}
 #format-underline = #2d1bd1
-;format-offset = 60
-label = "  %date%"
-label-foreground = #000000
-
-format-background = ${colors.date-colour}
+format-offset = 60
+label = " %date%"
+label-foreground = ${colors.date-colour}
 
 [module/calendar]
 type = custom/script
@@ -380,37 +337,33 @@ click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = " <label-volume> <bar-volume> "
+format-volume = <label-volume> <bar-volume>
 ;label-volume = VOL %percentage%%
-label-volume = "  "
+label-volume = 
 #label-volume-foreground = ${root.foreground}
-label-volume-foreground = #000000
+label-volume-foreground = ${colors.sound-colour}
 
-label-muted = "  "
+label-muted =  
 label-muted-foreground = #666
 
 #label-volume-underline = #a300cc
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #000000
-bar-volume-foreground-1 = #000000
-bar-volume-foreground-2 = #000000
-bar-volume-foreground-3 = #000000
-bar-volume-foreground-4 = #000000
-bar-volume-foreground-5 = #000000
-bar-volume-foreground-6 = #000000
+bar-volume-foreground-0 = ${colors.sound-colour}
+bar-volume-foreground-1 = ${colors.sound-colour}
+bar-volume-foreground-2 = ${colors.sound-colour}
+bar-volume-foreground-3 = ${colors.sound-colour}
+bar-volume-foreground-4 = ${colors.sound-colour}
+bar-volume-foreground-5 = ${colors.sound-colour}
+bar-volume-foreground-6 = ${colors.sound-colour}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = #000000
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.time-colour} 
-
-format-volume-background = ${colors.sound-colour}
-format-muted-background = ${colors.sound-colour}
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 type = internal/alsa
@@ -451,37 +404,33 @@ format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage% 
 
 #format-discharging = <ramp-capacity> <label-discharging>
-;format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
-format-discharging = <ramp-capacity>
+format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
 #format-discharging-underline = ${self.format-charging-underline}
 label-discharging = 
 
 format-full-prefix = ""
 #format-full-prefix = " "
-format-full-prefix-foreground = #000000
+format-full-prefix-foreground = ${colors.battery-colour}
 #format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = "   "
-ramp-capacity-1 = "   "
-ramp-capacity-2 = "   "
-ramp-capacity-3 = "   "
-ramp-capacity-4 = "  "
-ramp-capacity-foreground = #000000
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.battery-colour}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = #000000
+animation-charging-foreground = ${colors.battery-colour}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = #000000
+animation-discharging-foreground = ${colors.battery-colour}
 animation-discharging-framerate = 750
-
-ramp-capacity-background = ${colors.battery-colour}
-format-charging-background = ${colors.battery-colour} 
 
 [module/battery-one]
 type = internal/battery
@@ -494,36 +443,32 @@ format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%
 
 #format-discharging = <ramp-capacity> <label-discharging>
-;format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
-format-discharging = <ramp-capacity>
+format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
 #format-discharging-underline = ${self.format-charging-underline}
 label-discharging = 
 
 format-full-prefix = ""
-format-full-prefix-foreground = #000000
+format-full-prefix-foreground = ${colors.battery-colour}
 #format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = "   "
-ramp-capacity-1 = "   "
-ramp-capacity-2 = "   "
-ramp-capacity-3 = "   "
-ramp-capacity-4 = "   "
-ramp-capacity-foreground = #000000
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.battery-colour}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = #000000
+animation-charging-foreground = ${colors.battery-colour}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = #000000
+animation-discharging-foreground = ${colors.battery-colour}
 animation-discharging-framerate = 750
-
-ramp-capacity-background = ${colors.battery-colour}
-format-charging-background = ${colors.battery-colour} 
 
 [module/temperature]
 type = internal/temperature
@@ -577,15 +522,12 @@ menu-2-1-exec = menu-open-0
 type = internal/network
 interface = wlp4s0
 interval = 3.0
-label-connected = "  %essid% "
+label-connected =  %essid%
 #format-connected-underline = #e5001a
-label-connected-foreground = #000000
+label-connected-foreground = ${colors.wifi-colour}
 
 label-disconnected =  disconnected
 label-disconnected-foreground = #666
-
-label-connected-background = ${colors.wifi-colour}
-label-disconnected-background = ${colors.wifi-colour}
 
 #[module/kdeconnect]  
 #type = custom/script  
