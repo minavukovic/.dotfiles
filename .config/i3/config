@@ -1,4 +1,4 @@
-set $background "milesmorales2.jpg"
+set $background "astronaut.jpg"
 # background
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
@@ -272,7 +272,8 @@ bindsym F3 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal 
 #hdmi
 #bindsym F4 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
 #bindsym F4 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
-bindsym F4 exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh 
+bindsym F4 exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
+bindsym F2 exec xrandr --auto
 
 
 #display port
@@ -352,7 +353,7 @@ bindsym $mod+Control+x exec --no-startup-id redshift -x
 bindsym $mod+Control+Shift+x exec --no-startup-id redshift -O 3700
 
 # spotify
-bindsym $mod+y exec --no-startup-id flatpak run com.spotify.Client
+bindsym $mod+Shift+s exec --no-startup-id spotify
 
 # dolphin
 bindsym $mod+Shift+d exec --no-startup-id dolphin

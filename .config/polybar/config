@@ -34,18 +34,21 @@ alert = #bd2c40
 ;battery-colour = #e0d1b1 
 
 # yellow, green, blue, orange, red scheme
-;time-colour = #f4c242
-;date-colour = #2eb367
-;sound-colour = #4499a4
-;wifi-colour = #F76D1F
-;battery-colour = #EF3F34
+time-colour = #f4c242
+sound-colour = #9678cf
+date-colour = #4499a4
+battery-colour = #F76D1F
+wifi-colour = #EF3F34
+music-colour = #59ba6d
+
 
 # red progression scheme
-time-colour = #f3f7a0
-date-colour =  #FFC300 
-sound-colour = #FF5733 
-wifi-colour = #C70000
-battery-colour = #900C3F 
+;time-colour = #b5ffd3
+;date-colour =  #FFC300 
+;sound-colour = #FF5733 
+;wifi-colour = #C70000
+;battery-colour = #900C3F 
+;music-colour = #edffb5
 
 active-unfocused-workspace = #787671
 active-focused-workspace = #ea994d
@@ -55,10 +58,10 @@ active-unfocused-foreground = #ffffff
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 21
+height = 19
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius = 1.0
 fixed-center = true
 
 background = ${colors.background}
@@ -92,7 +95,7 @@ modules-left = bspwm i3 xwindow
 ;modules-center = date
 modules-center = time 
 #modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = left0 date left1 pulseaudio left2 wireless-network left3 battery-one battery-zero
+modules-right = left4 musicPlayer left0 date left1 pulseaudio left2 wireless-network left3 battery-one battery-zero
 ;modules-right = date pulseaudio wireless-network battery-one battery-zero
 
 tray-position = right
@@ -113,9 +116,15 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/left0]
+[module/left4]
 type = custom/text
 content-background = ${colors.background}
+content-foreground = ${colors.music-colour}
+content = "%{T3}%{T-}"
+
+[module/left0]
+type = custom/text
+content-background = ${colors.music-colour}
 content-foreground = ${colors.date-colour}
 content = "%{T3}%{T-}"
 
@@ -136,6 +145,18 @@ type = custom/text
 content-background = ${colors.wifi-colour}
 content-foreground = ${colors.battery-colour}
 content = "%{T3}%{T-}"
+
+[module/musicPlayer]
+type = custom/script
+exec = ~/.config/polybar/music_player.sh
+interval = 3
+click-left = playerctl previous &
+click-right = playerctl next &
+click-middle = playerctl play-pause &
+format-background = ${colors.music-colour}
+format-foreground = #000000 
+format-prefix = "  "
+format-suffix = " "
 
 [module/xwindow]
 type = internal/xwindow
