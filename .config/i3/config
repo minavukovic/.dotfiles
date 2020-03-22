@@ -358,3 +358,5 @@ bindsym $mod+Shift+s exec --no-startup-id spotify
 # dolphin
 bindsym $mod+Shift+d exec --no-startup-id dolphin
 
+# caprine (messenger) 
+bindsym $mod+Shift+a exec --no-startup-id caprine
