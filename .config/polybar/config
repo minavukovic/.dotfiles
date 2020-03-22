@@ -34,13 +34,20 @@ alert = #bd2c40
 ;battery-colour = #e0d1b1 
 
 # yellow, green, blue, orange, red scheme
-time-colour = #f4c242
-sound-colour = #9678cf
-date-colour = #4499a4
-battery-colour = #F76D1F
-wifi-colour = #EF3F34
-music-colour = #59ba6d
+;time-colour = #f4c242
+;sound-colour = #9678cf
+;date-colour = #4499a4
+;battery-colour = #F76D1F
+;wifi-colour = #EF3F34
+;music-colour = #59ba6d
 
+# rainbow colour scheme
+time-colour = #ff5747
+music-colour = #ff8c40
+date-colour = #face3c
+sound-colour = #3cba79
+wifi-colour = #00a2d4
+battery-colour = #af6be3
 
 # red progression scheme
 ;time-colour = #b5ffd3
@@ -428,7 +435,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.time-colour} 
+bar-volume-empty-foreground = #cecccf
 
 format-volume-background = ${colors.sound-colour}
 format-muted-background = ${colors.sound-colour}
