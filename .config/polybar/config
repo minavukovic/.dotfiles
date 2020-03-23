@@ -27,6 +27,9 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+########################################################
+# Theme colours
+
 ;time-colour = #f4c242
 ;date-colour = #e84d47
 ;sound-colour = #6fbbb6
@@ -42,12 +45,20 @@ alert = #bd2c40
 ;music-colour = #59ba6d
 
 # rainbow colour scheme
-time-colour = #ff5747
-music-colour = #ff8c40
-date-colour = #face3c
-sound-colour = #3cba79
-wifi-colour = #00a2d4
-battery-colour = #af6be3
+;time-colour = #ff5747
+;music-colour = #ff8c40
+;date-colour = #face3c
+;sound-colour = #3cba79
+;wifi-colour = #00a2d4
+;battery-colour = #af6be3
+
+# gruvbox colour scheme
+time-colour = #fb4934
+music-colour = #fe8019
+date-colour = #fabd2f
+sound-colour = #b8bb26
+wifi-colour = #83a598
+battery-colour = #d3869b
 
 # red progression scheme
 ;time-colour = #b5ffd3
@@ -56,9 +67,11 @@ battery-colour = #af6be3
 ;wifi-colour = #C70000
 ;battery-colour = #900C3F 
 ;music-colour = #edffb5
+######################################################
 
 active-unfocused-workspace = #787671
-active-focused-workspace = #ea994d
+#active-focused-workspace = #ea994d ######orange
+active-focused-workspace = #8ec07c
 active-focused-foreground = #000000
 active-unfocused-foreground = #ffffff
 

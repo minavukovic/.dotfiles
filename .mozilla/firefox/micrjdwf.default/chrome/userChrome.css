@@ -172,13 +172,15 @@ input#urlbar-input {
 
 .tabbrowser-tab:hover {
 	background-color: none !important;
-	background-image: linear-gradient(to left, #c97dff, #ff8989) !important;
+	/*background-image: linear-gradient(to left, #c97dff, #ff8989) !important;*/
+	background-image: linear-gradient(to left, #d3869b, #83a598) !important;
 	color: black !important;
 }
 
 .tabbrowser-tab[selected="true"] {
 	background-color: none !important;
-	background-image: linear-gradient(to left, #fff59d, #c05057) !important;
+/*	background-image: linear-gradient(to left, #fff59d, #c05057) !important;*/
+	background-image: linear-gradient(to left, #fabd2f, #fb4934) !important;
 	color: black !important;
 	font-weight: var(--tab-font-weight) !important;
 }
