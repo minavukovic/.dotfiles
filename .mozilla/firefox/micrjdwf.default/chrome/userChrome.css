@@ -17,7 +17,7 @@ html#main-window {
 	--urlbar-text-weight: 500;
 
 	/* Firefox variables */
-	--lwt-toolbar-field-focus-color: #ffcc12 !important;
+	--lwt-toolbar-field-focus-color: #fabd2f !important;
 	--lwt-toolbar-field-color: #fefefa !important;
 	--lwt-toolbar-field-background-color: var(--color-bg) !important;
 
@@ -85,7 +85,7 @@ html#main-window {
 /* Url bar suggestions' selected row */
 .urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected],
 .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected] > .urlbarView-row-inner {
-	background: #f9ff99 !important;
+	background: #fabd2f !important;
 	color: black !important;
 	fill-opacity: 1;
 }
