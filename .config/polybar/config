@@ -55,8 +55,8 @@ alert = #bd2c40
 # gruvbox colour scheme
 time-colour = #fb4934
 music-colour = #fe8019
-date-colour = #fabd2f
-sound-colour = #b8bb26
+sound-colour = #fabd2f
+date-colour = #b8bb26
 wifi-colour = #83a598
 battery-colour = #d3869b
 
@@ -69,7 +69,7 @@ battery-colour = #d3869b
 ;music-colour = #edffb5
 ######################################################
 
-active-unfocused-workspace = #787671
+active-unfocused-workspace = #7c6f64
 #active-focused-workspace = #ea994d ######orange
 active-focused-workspace = #8ec07c
 active-focused-foreground = #000000
@@ -115,7 +115,7 @@ modules-left = bspwm i3 xwindow
 ;modules-center = date
 modules-center = time 
 #modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = left4 musicPlayer left0 date left1 pulseaudio left2 wireless-network left3 battery-one battery-zero
+modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
 ;modules-right = date pulseaudio wireless-network battery-one battery-zero
 
 tray-position = right
@@ -145,18 +145,18 @@ content = "%{T3}%{T-}"
 [module/left0]
 type = custom/text
 content-background = ${colors.music-colour}
-content-foreground = ${colors.date-colour}
+content-foreground = ${colors.sound-colour}
 content = "%{T3}%{T-}"
 
 [module/left1]
 type = custom/text
-content-background = ${colors.date-colour}
-content-foreground = ${colors.sound-colour}
+content-background = ${colors.sound-colour}
+content-foreground = ${colors.date-colour}
 content = "%{T3}%{T-}"
 
 [module/left2]
 type = custom/text
-content-background = ${colors.sound-colour}
+content-background = ${colors.date-colour}
 content-foreground = ${colors.wifi-colour}
 content = "%{T3}%{T-}"
 
@@ -448,7 +448,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = #cecccf
+bar-volume-empty-foreground = #bead93
 
 format-volume-background = ${colors.sound-colour}
 format-muted-background = ${colors.sound-colour}
