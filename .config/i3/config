@@ -209,10 +209,12 @@ set $bg-color 	         #000000
 set $inactive-bg-color   #000000
 set $text-color          #d38e0c
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+#set $urgent-bg-color     #E53935
+set $urgent-bg-color     #170505
 #set $border-colour		 #9b6207
 #set $border-colour		 #9c6506
-set $border-colour		 #8e2626
+#set $border-colour		 #8e2626 red 
+set $border-colour		 #fe6f61
 #set $border-colour		 #C5B358 
 
 # window colors
@@ -273,7 +275,7 @@ bindsym F3 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal 
 #bindsym F4 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
 #bindsym F4 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
 bindsym F4 exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
-bindsym F2 exec xrandr --auto
+bindsym F2 exec xrandr --auto; exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
 
 
 #display port
