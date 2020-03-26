@@ -25,7 +25,7 @@ foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
-alert = #bd2c40
+alert = #45201b
 
 ########################################################
 # Theme colours
@@ -73,7 +73,7 @@ active-unfocused-workspace = #7c6f64
 #active-focused-workspace = #ea994d ######orange
 active-focused-workspace = #8ec07c
 active-focused-foreground = #000000
-active-unfocused-foreground = #ffffff
+active-unfocused-foreground = #000000
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -118,9 +118,9 @@ modules-center = time
 modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
 ;modules-right = date pulseaudio wireless-network battery-one battery-zero
 
-tray-position = right
+;tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+tray-background = ${colors.battery-colour} 
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -228,7 +228,9 @@ label-occupied-padding = 4
 
 ;label-urgent = %index%!
 label-urgent = %name%!
-label-urgent-background = ${colors.alert}
+;label-urgent-background = ${colors.alert}
+label-urgent-background = 
+label-urgent-foreground = ${colors.alert} 
 label-urgent-padding = 4
 ;label-urgent-padding = 2
 
@@ -523,6 +525,7 @@ animation-discharging-framerate = 750
 
 ramp-capacity-background = ${colors.battery-colour}
 format-charging-background = ${colors.battery-colour} 
+label-charging-background = ${colors.battery-colour} 
 
 [module/battery-one]
 type = internal/battery
@@ -565,6 +568,7 @@ animation-discharging-framerate = 750
 
 ramp-capacity-background = ${colors.battery-colour}
 format-charging-background = ${colors.battery-colour} 
+label-charging-background = ${colors.battery-colour} 
 
 [module/temperature]
 type = internal/temperature
