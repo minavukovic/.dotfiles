@@ -19,7 +19,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 #background = #000000 not transparant
-background = #aa000000
+background = #66000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -70,7 +70,7 @@ battery-colour = #d3869b
 ;music-colour = #edffb5
 ######################################################
 
-active-unfocused-workspace = #7c6f64
+active-unfocused-workspace = #928374
 #active-focused-workspace = #ea994d ######orange
 active-focused-workspace = #8ec07c
 active-focused-foreground = #000000
