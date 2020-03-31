@@ -182,6 +182,7 @@ format-suffix = " "
 [module/xwindow]
 type = internal/xwindow
 label = "  %title:0:30:...% "
+format-foreground = #ebdbb2
 
 [module/xkeyboard]
 type = internal/xkeyboard
