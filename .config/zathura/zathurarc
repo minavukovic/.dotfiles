@@ -12,6 +12,7 @@ map J zoom out
 map m scroll full-down
 map , scroll full-up
 map i recolor
+set selection-clipboard clipboard
 
 set default-bg                  "#0A0A0A"
 set default-fg                  "#ebdbb2"
