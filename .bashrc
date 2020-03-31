@@ -149,6 +149,7 @@ alias la="ls -a"
 
 alias r="ranger"
 alias z="zathura"
+alias o="okular"
 alias t="tty-clock -cC 4"
 export READER="zathura"
 alias vrc="vi ~/.vimrc"

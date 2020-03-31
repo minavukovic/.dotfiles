@@ -473,7 +473,7 @@ body:not(.body-container--windows) .content-top-bar__profile-menu-button .dropdo
 }
 
 .GlueTableRow--is-selected {
-	background-color: var(--modspotify_scrollbar_fg_and_selected_row_bg) !important;
+	background-color: var(--modspotify_scrollbar_fb_and_selected_row_bg) !important;
 }
 
 .tracklist-podcast .tl-progress .row-progress__bar {
