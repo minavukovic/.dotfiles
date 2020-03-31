@@ -1,4 +1,4 @@
-set $background "astronaut.jpg"
+set $background "portland4.jpg"
 # background
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
@@ -283,8 +283,8 @@ bindsym F2 exec xrandr --auto; exec xrandr --output eDP1 --primary --mode 1920x1
 
 # BRIGHTNESS
 #dim 
-bindsym F11 exec xrandr --output HDMI2 --brightness 0.6
-bindsym F12 exec xrandr --output HDMI2 --brightness 1
+bindsym $mod+F11 exec xrandr --output HDMI2 --brightness 0.6
+bindsym $mod+F12 exec xrandr --output HDMI2 --brightness 1
 
 
 # Trackpad 
@@ -362,3 +362,8 @@ bindsym $mod+Shift+d exec --no-startup-id dolphin
 
 # caprine (messenger) 
 bindsym $mod+Shift+a exec --no-startup-id caprine
+
+# playerctl music controls
+bindsym F10 exec --no-startup-id playerctl previous &
+bindsym F11 exec --no-startup-id playerctl play-pause &
+bindsym F12 exec --no-startup-id playerctl next &
