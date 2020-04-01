@@ -347,10 +347,10 @@ exec_always libinput-gestures-setup start
 bindsym $mod+p exec --no-startup-id ~/.config/i3/Latex-picker/dmenulatex-type.sh
 
 # firefox, firefox dev, chrome shortcuts
-bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+c exec --no-startup-id firefox
 bindsym $mod+Shift+c exec --no-startup-id firefox-developer-edition
 #bindsym $mod+c exec --no-startup-id google-chrome-stable
-bindsym $mod+c exec --no-startup-id chromium
+bindsym $mod+b exec --no-startup-id chromium
 
 # notifications
 exec_always dunst
