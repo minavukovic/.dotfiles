@@ -24,7 +24,7 @@ configuration {
 }
  
 #mainbox {
-    background-color: #00000000;
+    background-color: #aa000000;
     children: [inputbar, listview];
     spacing: 10px;
     /*margin: 20%;*/
@@ -35,7 +35,7 @@ configuration {
  
  
 #listview {
-    background-color: #00000000;
+    background-color: #aa000000;
     fixed-height: 0;
     border: 0px;
     spacing: 5px;
@@ -44,38 +44,38 @@ configuration {
 }
  
 #element {
-    background-color: #00000000;
+    background-color: #aa000000;
     border: 0;
     border-radius: 15px;
     padding: 3 0  3 4 ;
 }
  
 #element selected {
-    background-color: #bf800a;
+    background-color: #cf6c1d;
     text-color: #EFEFEF;
 }
  
  
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
-    background-color: #00000000;
+    background-color: #aa000000;
 }
  
 #case-indicator {
-    background-color: #00000000;
+    background-color: #aa000000;
     spacing:    0;
 }
 #entry {
-    background-color: #00000000;
+    background-color: #aa000000;
     spacing:    0;
 }
 #prompt {
-    background-color: #00000000;
+    background-color: #aa000000;
     spacing:    0;
 }
  
 #textbox-prompt-colon {
-    background-color: #00000000;
+    background-color: #aa000000;
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
