@@ -26,7 +26,8 @@ foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
-alert = #45201b
+;alert = #45201b
+alert = #aa000000
 
 ########################################################
 # Theme colours
@@ -230,8 +231,8 @@ label-occupied-padding = 4
 
 ;label-urgent = %index%!
 label-urgent = %name%!
-;label-urgent-background = ${colors.alert}
-label-urgent-background = 
+label-urgent-background = ${colors.alert}
+;label-urgent-background = 
 label-urgent-foreground = ${colors.alert} 
 label-urgent-padding = 4
 ;label-urgent-padding = 2
@@ -270,6 +271,7 @@ label-focused-padding = ${module/bspwm.label-focused-padding}
 ;label-unfocused = %index%
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-foreground = #ebdbb2
 
 ; visible = Active workspace on unfocused monitor
 ;label-visible = %index%
