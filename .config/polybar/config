@@ -29,6 +29,8 @@ secondary = #e60053
 ;alert = #45201b
 alert = #aa000000
 
+text-colour = #000000
+
 ########################################################
 # Theme colours
 
@@ -38,42 +40,45 @@ alert = #aa000000
 ;wifi-colour = #c9925b
 ;battery-colour = #e0d1b1 
 
-# yellow, green, blue, orange, red scheme
-;time-colour = #f4c242
-;sound-colour = #9678cf
-;date-colour = #4499a4
-;battery-colour = #F76D1F
-;wifi-colour = #EF3F34
-;music-colour = #59ba6d
+# gruvbox rainbow colour scheme
+;active-focused-workspace = #8ec07c
+;time-colour = #fb4934
+;music-colour = #fe8019
+;sound-colour = #fabd2f
+;date-colour = #b8bb26
+;wifi-colour = #83a598
+;battery-colour = #d3869b
 
-# rainbow colour scheme
-;time-colour = #ff5747
-;music-colour = #ff8c40
-;date-colour = #face3c
-;sound-colour = #3cba79
-;wifi-colour = #00a2d4
-;battery-colour = #af6be3
+# orange progression scheme
+;active-focused-workspace = #8ec07c
+;time-colour = #fabd2f
+;music-colour = #fba11c
+;sound-colour = #f17e23
+;date-colour = #d35721
+;wifi-colour = #b14424
+;battery-colour = #7b2c13
 
-# gruvbox colour scheme
-time-colour = #fb4934
-music-colour = #fe8019
-sound-colour = #fabd2f
-date-colour = #b8bb26
-wifi-colour = #83a598
-battery-colour = #d3869b
+# red orange scheme
+;active-focused-workspace = #8ec07c
+;time-colour = #fba11c
+;music-colour = #fb4934
+;sound-colour = #fba11c
+;date-colour = #fb4934
+;wifi-colour = #fba11c
+;battery-colour = #fb4934
 
-# red progression scheme
-;time-colour = #b5ffd3
-;date-colour =  #FFC300 
-;sound-colour = #FF5733 
-;wifi-colour = #C70000
-;battery-colour = #900C3F 
-;music-colour = #edffb5
+# orange => purple scheme
+active-focused-workspace = #DA5D49
+time-colour = #DC8460
+music-colour = #F1AD64
+sound-colour = #E58457
+date-colour = #D45B48
+wifi-colour = #AA353E
+battery-colour = #80152F
 ######################################################
 
 active-unfocused-workspace = #928374
 #active-focused-workspace = #ea994d ######orange
-active-focused-workspace = #8ec07c
 active-focused-foreground = #000000
 active-unfocused-foreground = #000000
 
@@ -176,7 +181,7 @@ click-left = playerctl previous &
 click-right = playerctl next &
 click-middle = playerctl play-pause &
 format-background = ${colors.music-colour}
-format-foreground = #000000 
+format-foreground = ${colors.text-colour} 
 format-prefix = "  "
 format-suffix = " "
 
@@ -393,7 +398,7 @@ time-alt = "%H:%M:%S  "
 
 format-prefix = "   "
 format-prefix-foreground = #000000
-label-foreground = #000000
+label-foreground = ${colors.text-colour}
 #format-underline = #ed6607
 
 label = %date% %time%
@@ -410,11 +415,11 @@ time = %H:%M
 
 format = " %{A:gsimplecal:} <label> %{A} "
 format-font = 1
-format-prefix-foreground = #000000
+format-prefix-foreground = ${colors.text-colour} 
 #format-underline = #2d1bd1
 ;format-offset = 60
 label = "  %date%"
-label-foreground = #000000
+label-foreground = ${colors.text-colour} 
 
 format-background = ${colors.date-colour}
 
@@ -431,7 +436,7 @@ format-volume = " <label-volume> <bar-volume> "
 ;label-volume = VOL %percentage%%
 label-volume = "  "
 #label-volume-foreground = ${root.foreground}
-label-volume-foreground = #000000
+label-volume-foreground = ${colors.text-colour} 
 
 label-muted = "  "
 label-muted-foreground = #666
@@ -439,17 +444,17 @@ label-muted-foreground = #666
 #label-volume-underline = #a300cc
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #000000
-bar-volume-foreground-1 = #000000
-bar-volume-foreground-2 = #000000
-bar-volume-foreground-3 = #000000
-bar-volume-foreground-4 = #000000
-bar-volume-foreground-5 = #000000
-bar-volume-foreground-6 = #000000
+bar-volume-foreground-0 = ${colors.text-colour} 
+bar-volume-foreground-1 = ${colors.text-colour} 
+bar-volume-foreground-2 = ${colors.text-colour}  
+bar-volume-foreground-3 = ${colors.text-colour} 
+bar-volume-foreground-4 = ${colors.text-colour} 
+bar-volume-foreground-5 = ${colors.text-colour} 
+bar-volume-foreground-6 = ${colors.text-colour}
 bar-volume-gradient = false
 bar-volume-indicator = 
 bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = #000000
+bar-volume-indicator-foreground = ${colors.text-colour}
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
@@ -513,18 +518,18 @@ ramp-capacity-1 = "   "
 ramp-capacity-2 = "   "
 ramp-capacity-3 = "   "
 ramp-capacity-4 = "  "
-ramp-capacity-foreground = #000000
+ramp-capacity-foreground = ${colors.text-colour} 
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = #000000
+animation-charging-foreground = ${colors.text-colour} 
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = #000000
+animation-discharging-foreground = ${colors.text-colour} 
 animation-discharging-framerate = 750
 
 ramp-capacity-background = ${colors.battery-colour}
@@ -548,7 +553,7 @@ format-discharging = <ramp-capacity>
 label-discharging = 
 
 format-full-prefix = ""
-format-full-prefix-foreground = #000000
+format-full-prefix-foreground = ${colors.text-colour} 
 #format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = "   "
@@ -556,12 +561,12 @@ ramp-capacity-1 = "   "
 ramp-capacity-2 = "   "
 ramp-capacity-3 = "   "
 ramp-capacity-4 = "   "
-ramp-capacity-foreground = #000000
+ramp-capacity-foreground = ${colors.text-colour} 
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = #000000
+animation-charging-foreground = ${colors.text-colour}  
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
@@ -628,7 +633,7 @@ interface = wlp4s0
 interval = 3.0
 label-connected = "  %essid% "
 #format-connected-underline = #e5001a
-label-connected-foreground = #000000
+label-connected-foreground = ${colors.text-colour} 
 
 label-disconnected =  disconnected
 label-disconnected-foreground = #666
