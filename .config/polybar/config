@@ -29,7 +29,6 @@ secondary = #e60053
 ;alert = #45201b
 alert = #aa000000
 
-text-colour = #000000
 
 ########################################################
 # Theme colours
@@ -68,19 +67,41 @@ text-colour = #000000
 ;battery-colour = #fb4934
 
 # orange => purple scheme
+;active-focused-workspace = #DA5D49
+;time-colour = #DC8460
+;music-colour = #F1AD64
+;sound-colour = #E58457
+;date-colour = #D45B48
+;wifi-colour = #AA353E
+;battery-colour = #80152F
+
+# transparent theme
 active-focused-workspace = #DA5D49
-time-colour = #DC8460
-music-colour = #F1AD64
-sound-colour = #E58457
-date-colour = #D45B48
-wifi-colour = #AA353E
-battery-colour = #80152F
+time-colour = #66000000
+music-colour = #66000000
+sound-colour = #66000000
+date-colour = #66000000
+wifi-colour = #66000000
+battery-colour = #66000000
 ######################################################
 
+### workspace colours
 active-unfocused-workspace = #928374
 #active-focused-workspace = #ea994d ######orange
 active-focused-foreground = #000000
 active-unfocused-foreground = #000000
+
+### bar text colour
+#text-colour = #000000
+text-colour = #ebdbb2
+
+### icon colours
+time-icon = #DA5D49
+music-icon = #DA5D49
+sound-icon = #DA5D49
+date-icon = #DA5D49
+wifi-icon = #DA5D49
+battery-icon = #DA5D49
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -104,8 +125,9 @@ border-color = #00000000
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 0
-module-margin-right = 0
+# set to 0 if using arrows between modules
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = GoogleSans_Regular:pixelsize=10;3
 #font-0 = Hack:pixelsize=10;3
@@ -122,8 +144,8 @@ modules-left = bspwm i3 xwindow
 ;modules-center = date
 modules-center = time 
 #modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
-;modules-right = date pulseaudio wireless-network battery-one battery-zero
+;modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
+modules-right = musicPlayer pulseaudio date wireless-network battery-one battery-zero
 
 ;tray-position = right
 tray-padding = 2
@@ -184,6 +206,7 @@ format-background = ${colors.music-colour}
 format-foreground = ${colors.text-colour} 
 format-prefix = "  "
 format-suffix = " "
+format-prefix-foreground = ${colors.music-icon} 
 
 [module/xwindow]
 type = internal/xwindow
@@ -292,6 +315,7 @@ label-visible-padding = ${self.label-focused-padding}
 ;label-urgent = %index%
 label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-foreground = ${colors.text-colour} 
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 ; Separator in between workspaces
@@ -397,7 +421,7 @@ time = "%H:%M  "
 time-alt = "%H:%M:%S  "
 
 format-prefix = "   "
-format-prefix-foreground = #000000
+format-prefix-foreground = ${colors.time-icon} 
 label-foreground = ${colors.text-colour}
 #format-underline = #ed6607
 
@@ -415,11 +439,13 @@ time = %H:%M
 
 format = " %{A:gsimplecal:} <label> %{A} "
 format-font = 1
-format-prefix-foreground = ${colors.text-colour} 
+format-prefix-foreground = ${colors.date-icon} 
 #format-underline = #2d1bd1
 ;format-offset = 60
-label = "  %date%"
+label = "%date%"
+format-prefix = "  "
 label-foreground = ${colors.text-colour} 
+format-foreground = ${colors.text-colour} 
 
 format-background = ${colors.date-colour}
 
@@ -436,7 +462,7 @@ format-volume = " <label-volume> <bar-volume> "
 ;label-volume = VOL %percentage%%
 label-volume = "  "
 #label-volume-foreground = ${root.foreground}
-label-volume-foreground = ${colors.text-colour} 
+label-volume-foreground = ${colors.sound-icon} 
 
 label-muted = "  "
 label-muted-foreground = #666
@@ -518,18 +544,18 @@ ramp-capacity-1 = "   "
 ramp-capacity-2 = "   "
 ramp-capacity-3 = "   "
 ramp-capacity-4 = "  "
-ramp-capacity-foreground = ${colors.text-colour} 
+ramp-capacity-foreground = ${colors.battery-icon} 
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.text-colour} 
+animation-charging-foreground = ${colors.battery-icon} 
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.text-colour} 
+animation-discharging-foreground = ${colors.battery-icon} 
 animation-discharging-framerate = 750
 
 ramp-capacity-background = ${colors.battery-colour}
@@ -553,7 +579,7 @@ format-discharging = <ramp-capacity>
 label-discharging = 
 
 format-full-prefix = ""
-format-full-prefix-foreground = ${colors.text-colour} 
+format-full-prefix-foreground = ${colors.battery-icon} 
 #format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = "   "
@@ -561,12 +587,12 @@ ramp-capacity-1 = "   "
 ramp-capacity-2 = "   "
 ramp-capacity-3 = "   "
 ramp-capacity-4 = "   "
-ramp-capacity-foreground = ${colors.text-colour} 
+ramp-capacity-foreground = ${colors.battery-icon} 
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.text-colour}  
+animation-charging-foreground = ${colors.battery-icon}  
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
@@ -631,9 +657,11 @@ menu-2-1-exec = menu-open-0
 type = internal/network
 interface = wlp4s0
 interval = 3.0
-label-connected = "  %essid% "
+label-connected = "%essid% "
+format-connected-prefix = " "
 #format-connected-underline = #e5001a
 label-connected-foreground = ${colors.text-colour} 
+format-connected-foreground = ${colors.wifi-icon} 
 
 label-disconnected =  disconnected
 label-disconnected-foreground = #666
