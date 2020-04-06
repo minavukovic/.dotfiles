@@ -173,7 +173,9 @@ input#urlbar-input {
 .tabbrowser-tab:hover {
 	background-color: none !important;
 	/*background-image: linear-gradient(to left, #c97dff, #ff8989) !important;*/
-	background-image: linear-gradient(to left, #d3869b, #83a598) !important;
+	/*background-image: linear-gradient(to left, #d3869b, #83a598) !important;*/ /*blue->purple*/
+	/*background-image: linear-gradient(to left, #C05B7B, #65375C) !important;*/ /*purple->white*/
+	background-image: linear-gradient(to left, #E67B51, #C93F3F) !important; /*orangey*/
 	color: black !important;
 }
 
