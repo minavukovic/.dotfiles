@@ -150,6 +150,7 @@ alias la="ls -a"
 alias r="ranger"
 alias z="zathura"
 alias o="okular"
+alias f="feh"
 alias t="tty-clock -cC 4"
 export READER="zathura"
 alias vrc="vi ~/.vimrc"
@@ -161,6 +162,7 @@ alias down="cd ~/Downloads"
 alias conf="cd ~/.config"
 alias src="source ~/.bashrc"
 alias doit="sudo !!"
+alias commands="~/commands.sh"
 
 sch() {
 	cd ~/school/$1

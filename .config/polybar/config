@@ -149,8 +149,8 @@ padding-left = 0
 padding-right = 0
 
 # set to 0 if using arrows between modules
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = GoogleSans_Regular:pixelsize=10;3
 #font-0 = Hack:pixelsize=10;3
@@ -227,7 +227,7 @@ click-right = playerctl next &
 click-middle = playerctl play-pause &
 format-background = ${colors.music-colour}
 format-foreground = ${colors.text-colour} 
-format-prefix = "  "
+format-prefix = "   "
 format-suffix = " "
 format-prefix-foreground = ${colors.music-icon} 
 

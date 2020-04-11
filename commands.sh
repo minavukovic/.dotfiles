@@ -7,8 +7,8 @@ if [[ -z "$param" ]] && [[ -z "$package" ]]; then
 	echo -e "up ................. [update]"
 	echo -e "rm [package] ....... [remove package, leave deps installed]"
 	echo -e "rmall [package] .... [remove package and deps not req by others]"
-	echo -e "yaourt -R [package] .[remove package]"
-	echo -e "yaourt -Rsn [package] [completely remove package including dependencies]"
+	echo -e "yay -R [package] .[remove package]"
+	echo -e "yay -Rsn [package] [completely remove package including dependencies]"
 
 # update
 elif [[ "$param" == "up" ]] && [[ -z "$package" ]]; then

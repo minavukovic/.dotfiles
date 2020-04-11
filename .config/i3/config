@@ -1,4 +1,4 @@
-set $background "gradient.jpg"
+set $background "lines.png"
 # background
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
