@@ -97,6 +97,7 @@ WINDOW_ICONS = {
     'postman': fa.icons['space-shuttle'],
     'qutebrowser': fa.icons['space-shuttle'],
     'rhythmbox': fa.icons['play'],
+    'simplescreenrecorder': fa.icons['video'],
     'slack': fa.icons['slack'],
     'slic3r.pl': fa.icons['cube'],
     'spotify': fa.icons['music'],  # could also use the 'spotify' icon

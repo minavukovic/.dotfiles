@@ -1,4 +1,4 @@
-set $background "lines.png"
+set $background "diamond.jpg"
 # background
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
