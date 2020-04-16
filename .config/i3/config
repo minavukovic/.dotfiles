@@ -1,4 +1,4 @@
-set $background "diamond.jpg"
+set $background "lake.jpg"
 # background
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
@@ -243,7 +243,8 @@ set $urgent-bg-color     #170505
 #set $border-colour		 #9b6207
 #set $border-colour		 #9c6506
 #set $border-colour		 #8e2626 red 
-set $border-colour		 #fe6f61
+#set $border-colour		 #fe6f61 pink
+set $border-colour		 #DA5D49
 #set $border-colour		 #C5B358 
 
 # window colors
@@ -397,3 +398,6 @@ bindsym $mod+Shift+a exec --no-startup-id caprine
 bindsym F10 exec --no-startup-id playerctl previous &
 bindsym F11 exec --no-startup-id playerctl play-pause &
 bindsym F12 exec --no-startup-id playerctl next &
+
+# kill extra polybar
+exec_always /home/mina/.config/polybar/killextrabar.sh

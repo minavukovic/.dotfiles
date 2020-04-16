@@ -27,7 +27,7 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 ;alert = #45201b
-alert = #aa000000
+alert = #aa000000 
 
 
 ########################################################
@@ -163,7 +163,7 @@ font-4 = Hack:pixelsize=10;3
 ; font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
 ; font-3 = siji:pixelsize=10;1
 
-modules-left = bspwm i3 xwindow
+modules-left = i3 xwindow
 ;modules-center = date
 modules-center = time 
 #modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
@@ -337,7 +337,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 ;label-urgent = %index%
 label-urgent = %name%
-label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-background = ${colors.active-unfocused-workspace}
 label-urgent-foreground = ${colors.text-colour} 
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 

@@ -68,7 +68,7 @@ WINDOW_ICONS = {
     'feh': fa.icons['image'],
     'file-roller': fa.icons['compress'],
     'firefox': fa.icons['firefox'],
-    'firefoxdeveloperedition': fa.icons['moon'],
+    'firefoxdeveloperedition': fa.icons['globe'],
     'firefox-esr': fa.icons['firefox'],
     'gimp-2.8': fa.icons['image'],
     'gnome-control-center': fa.icons['toggle-on'],
@@ -106,6 +106,7 @@ WINDOW_ICONS = {
     'subl': fa.icons['code'],
     'subl3': fa.icons['code'],
     'sublime_text': fa.icons['code'],
+    'systemsettings5': fa.icons['cog'],
     'thunar': fa.icons['copy'],
     'thunderbird': fa.icons['envelope'],
     'totem': fa.icons['play'],
@@ -115,6 +116,7 @@ WINDOW_ICONS = {
     'yelp': fa.icons['code'],
     'zathura': fa.icons['file-pdf'],
     'zenity': fa.icons['window-maximize'],
+    'zoom': fa.icons['phone'],
 }
 
 # This icon is used for any application not in the list above
