@@ -11,7 +11,7 @@ configuration {
     background-color: #00000065;
     border-color: #00000000;
     text-color: #EFEFEF;
-    font: "Hack 11";
+    font: "GoogleSans_Regular 11";
 }
  
 #window {
@@ -51,7 +51,7 @@ configuration {
 }
  
 #element selected {
-    background-color: #cf6c1d;
+    background-color: #fe8019;
     text-color: #EFEFEF;
 }
  
