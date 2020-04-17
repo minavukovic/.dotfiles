@@ -162,7 +162,7 @@ alias down="cd ~/Downloads"
 alias conf="cd ~/.config"
 alias src="source ~/.bashrc"
 alias doit="sudo !!"
-alias commands="~/commands.sh"
+alias commands="~/Misc/scripts/commands.sh"
 
 sch() {
 	cd ~/school/$1
