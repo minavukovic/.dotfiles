@@ -1,7 +1,12 @@
-set $background "lake.jpg"
-# background
+set $background "galaxy-red-stars-red-space.jpg"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
+
+# diff wallpaper per monitor
+#bindsym $mod+Control+Shift+b exec --no-startup-id feh --randomize --bg-fill /home/mina/Pictures/*
+
+# same wallpaper for both monitors
+bindsym $mod+Control+Shift+b exec --no-startup-id ~/.config/i3/randwallpaper.sh
 
 set $mod Mod4
 
@@ -10,7 +15,7 @@ set $mod Mod4
 font pango:GoogleSans-Regular 10
 
 # Gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 gaps inner 15
 gaps outer 2
 
