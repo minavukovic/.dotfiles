@@ -170,9 +170,9 @@ modules-center = time
 ;modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
 modules-right = musicPlayer pulseaudio date wireless-network battery-one battery-zero
 
-;tray-position = right
+#tray-position = right
 tray-padding = 2
-tray-background = ${colors.battery-colour} 
+tray-background = ${colors.background} 
 
 ;wm-restack = bspwm
 ;wm-restack = i3

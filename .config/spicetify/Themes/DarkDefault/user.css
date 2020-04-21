@@ -165,11 +165,11 @@
 
 /*
 Hide the song duration and elapsed text. I dont know where to put those so I just hide them
-*/
 .view-player .player-controls-container .progress-container .elapsed,
 .view-player .player-controls-container .progress-container .remaining {
 	display: none !important;
 }
+*/
 
 /* Add round corner for Gerne and Mood cards */
 .gc-image-container,
@@ -568,7 +568,7 @@ span.glue-page-header__title-text {
 .view-player .now-playing-container .button-add {
 	color: var(--modspotify_main_fg) !important;
 }
-
+/*
 .progress-container .progress-bar,
 .progress-container .inner {
 	top: 0 !important;
@@ -580,12 +580,16 @@ span.glue-page-header__title-text {
 	top: 0 !important;
 	height: 5px;
 }
-
+*/
 .progress-container {
-	position: fixed !important;
-	width: 100% !important;
-	bottom: var(--bar-height) !important;
-	margin : 0 !important;
+	/*position: fixed !important;*/
+	/*width: 100% !important;*/
+	width: 55% !important;
+/*	bottom: var(--bar-height) !important;
+	margin : 0 !important;*/
+	margin-left: auto;
+	margin-right: auto;
+	background-color:
 }
 
 .progress-container .inner {
