@@ -155,3 +155,8 @@ autocmd Filetype markdown inoremap ;3 ###<Space><Space><Enter><++><Esc>k<Space>i
 " run pandoc
 command P !~/.config/i3/pand.sh %
 
+" set paste
+autocmd Filetype * nnoremap <silent> ;= :set paste<CR>
+autocmd Filetype * nnoremap <silent> ;- :set nopaste<CR>
+
+

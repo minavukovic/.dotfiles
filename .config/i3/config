@@ -266,19 +266,19 @@ hide_edge_borders both
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-bar {
-		position top
-        #status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    i3bar_command ~/.config/polybar/launch.sh
-		colors {
-			background $bg-color
-	    		separator #757575
-			#                  border             background         text
-			focused_workspace  $bg-color          $bg-color          $text-color
-			inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-		}
-}
+#bar {
+#		position top
+#        #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	    i3bar_command ~/.config/polybar/launch.sh
+#		colors {
+#			background $bg-color
+#	    		separator #757575
+#			#                  border             background         text
+#			focused_workspace  $bg-color          $bg-color          $text-color
+#			inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#		}
+#}
 
 bindsym $mod+shift+x exec i3lock --color "#151c28" 
 
@@ -405,5 +405,4 @@ bindsym F11 exec --no-startup-id playerctl play-pause &
 bindsym F12 exec --no-startup-id playerctl next &
 
 # kill extra polybar
-exec_always /home/mina/.config/polybar/killextrabar.sh
 bindsym $mod+Control+Shift+k exec --no-startup-id ~/.config/polybar/killextrabar.sh
