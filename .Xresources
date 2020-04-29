@@ -9,7 +9,7 @@
 
 
 !! transparency (0-1)
-st.alpha: 0.98
+st.alpha: 0.96
 !rofi.color-window: argb:CC2d303b
  
 URxvt.background: t_background
