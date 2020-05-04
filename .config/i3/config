@@ -405,3 +405,5 @@ bindsym F10 exec --no-startup-id playerctl previous &
 bindsym F11 exec --no-startup-id playerctl play-pause &
 bindsym F12 exec --no-startup-id playerctl next &
 
+# workspace back and forth
+bindsym $mod+grave workspace back_and_forth
