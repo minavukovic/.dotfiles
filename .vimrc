@@ -159,4 +159,3 @@ command P !~/.config/i3/pand.sh %
 autocmd Filetype * nnoremap <silent> ;= :set paste<CR>
 autocmd Filetype * nnoremap <silent> ;- :set nopaste<CR>
 
-

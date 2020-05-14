@@ -1,4 +1,5 @@
-set $background "mountainreflection.jpg"
+#set $background "lake.jpg"
+set $background "manjaro.png"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
 
@@ -18,6 +19,7 @@ font pango:GoogleSans-Regular 10
 for_window [class="^.*"] border pixel 4
 gaps inner 15
 gaps outer 2
+title_align center
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -393,6 +395,7 @@ bindsym $mod+Control+Shift+x exec --no-startup-id redshift -O 3700
 
 # spotify
 bindsym $mod+Shift+s exec --no-startup-id spotify
+for_window [class="spotify"] move container to workspace 1
 
 # dolphin
 bindsym $mod+Shift+d exec --no-startup-id dolphin
@@ -407,3 +410,6 @@ bindsym F12 exec --no-startup-id playerctl next &
 
 # workspace back and forth
 bindsym $mod+grave workspace back_and_forth
+
+# blurwal
+exec_always blurwal -s 4 -b 15

@@ -5,4 +5,4 @@ xinput --set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" -0.60
 #xinput --set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" 1
 
 # send notification
-notify-send "Trackpoint speed updated!"
+#notify-send "Trackpoint speed updated!"
