@@ -59,11 +59,11 @@ endif
 
 
 call plug#begin('~/.vim/plugged')
-
+Plug 'morhetz/gruvbox'
 Plug 'https://github.com/junegunn/vim-plug.git'
 Plug 'lervag/vimtex'
 "Plug 'tpope/vim-surround'
-"Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 "Plug 'jreybert/vimagit'
@@ -73,14 +73,21 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 "Plug 'vifm/vifm.vim'
 "Plug 'kovetskiy/sxhkd-vim'
+"Plug 'ycm-core/YouCompleteMe'
+Plug 'chrisbra/Colorizer'
 
 call plug#end()
 syntax on
 
+" open nerd tree
+map <C-n> :NERDTreeToggle<CR>
+
 let g:vimtex_view_general_options = 'zathura'
 let g:vimtex_view_method = 'zathura'
 let g:latex_view_general_viewer = 'zathura'
-let g:airline_theme='zenburn'
+
+" airline status config
+let g:airline_theme='gruvbox'
 
 "let mapleader=" "
 
@@ -88,7 +95,10 @@ let g:airline_theme='zenburn'
 "inoremap <leader><leader> <Esc>/<Enter>"_c4l
 "vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 "map <leader><leader> <Esc>/<++><Enter>"_c4l
-inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+
+" map jump to <++> ##### leader is \
+"inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 
 " latex snippets
 """LATEX
@@ -159,3 +169,8 @@ command P !~/.config/i3/pand.sh %
 autocmd Filetype * nnoremap <silent> ;= :set paste<CR>
 autocmd Filetype * nnoremap <silent> ;- :set nopaste<CR>
 
+" navigating split views
+map <space>h :wincmd h<CR>
+map <space>j :wincmd j<CR>
+map <space>k :wincmd k<CR>
+map <space>l :wincmd l<CR>

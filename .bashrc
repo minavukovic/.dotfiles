@@ -167,6 +167,10 @@ alias commands="~/Misc/scripts/commands.sh"
 sch() {
 	cd ~/school/$1
 } 
+
+wp() {
+	feh --bg-fill ~/$1
+}
 #####################################################
 
 # better yaourt colors
