@@ -48,7 +48,7 @@ bindsym --whole-window $mod+button2 kill
 #bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec dmenu_run -i -l 5 -fn Hack-14 -nb '#000000' -nf '#f46b42' -sb '#353532' -sf '#edd7d0'
 #bindsym $mod+d exec --no-startup-id rofi -show run -display-run -theme config.rasi ""
-bindsym $mod+d exec rofi -modi "window#run#ssh" -show drun -theme config.rasi -location 0
+bindsym $mod+d exec rofi -modi "window#run#ssh" -show drun -theme blocks.rasi -location 0
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -417,3 +417,5 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+# rofi search script
+bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "

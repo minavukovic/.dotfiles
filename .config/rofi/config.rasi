@@ -10,7 +10,7 @@ configuration {
     columns: 1;
     background-color: #00000065;
     border-color: #00000000;
-    text-color: #EFEFEF;
+    text-color: #ebdbb2;
     font: "GoogleSans_Regular 11";
 }
  
@@ -39,7 +39,7 @@ configuration {
     fixed-height: 0;
     border: 0px;
     spacing: 5px;
-    scrollbar: false;
+    scrollbar: true;
     padding: 10px 10px 0px;
 }
  
@@ -52,7 +52,7 @@ configuration {
  
 #element selected {
     background-color: #c76414;
-    text-color: #EFEFEF;
+    text-color: #ebdbb2;
 }
  
  
