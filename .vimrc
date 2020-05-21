@@ -98,7 +98,7 @@ let g:airline_theme='gruvbox'
 
 " map jump to <++> ##### leader is \
 "inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
-inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+inoremap <C-@> <Esc>/<++><Enter>"_c4l
 
 " latex snippets
 """LATEX
@@ -174,3 +174,7 @@ map <space>h :wincmd h<CR>
 map <space>j :wincmd j<CR>
 map <space>k :wincmd k<CR>
 map <space>l :wincmd l<CR>
+
+:map <S-{> vi{
+:map <S-(> vi(
+:map <S-[> vi[
