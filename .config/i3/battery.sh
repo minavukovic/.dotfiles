@@ -3,4 +3,4 @@
 STATUS=$(acpi)
 
 
-notify-send "${STATUS}"
+notify-send -t 2000 "${STATUS}"
