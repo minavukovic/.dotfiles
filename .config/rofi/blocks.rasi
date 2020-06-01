@@ -18,6 +18,8 @@ configuration {
 
     default-border-radius: 10px;
     default-margin: 3px 3px;
+
+	font: "GoogleSans_Regular 11";
 }
 
 window, mainbox, listview {

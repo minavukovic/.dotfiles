@@ -17,11 +17,11 @@ scrollbar[orient="horizontal"] {
 }
 
 scrollbar thumb {
-	background: #9e1f1b !important;
+	background: #da5d49 !important;
 }
 scrollbar thumb:hover,
 scrollbar thumb:active {
-	background: #e32c27 !important;
+	background: #da5d49 !important;
 }
 
 scrollbar:hover scrollbarbutton {

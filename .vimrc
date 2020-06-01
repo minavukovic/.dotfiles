@@ -2,7 +2,7 @@ set tabstop=4
 syntax enable
 set number
 set autoindent
-"set smartindent "insert new indentation if needed
+set smartindent "insert new indentation if needed
 set noerrorbells
 set novisualbell
 set t_vb= "turn off error flash
@@ -175,6 +175,5 @@ map <space>j :wincmd j<CR>
 map <space>k :wincmd k<CR>
 map <space>l :wincmd l<CR>
 
-:map <S-{> vi{
-:map <S-(> vi(
-:map <S-[> vi[
+" highlight cursor line
+nnoremap <leader>] :set cursorline!<CR>
