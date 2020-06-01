@@ -16,10 +16,11 @@ set $mod Mod4
 font pango:GoogleSans-Regular 10
 
 # Gaps
-for_window [class="^.*"] border pixel 4
-gaps inner 15
-gaps outer 2
+for_window [class="^.*"] border pixel 3
+gaps inner 14
+gaps outer 1
 title_align center
+smart_gaps on
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -419,3 +420,6 @@ bindsym $mod+minus scratchpad show
 
 # rofi search script
 bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
+
+# battery notification
+bindsym $mod+Control+p exec --no-startup-id /home/mina/.config/i3/battery.sh
