@@ -552,6 +552,7 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 #format-charging-underline = #ffd000
 label-charging =  %percentage% 
+label-charging-foreground = #ebdbb2
 
 #format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
@@ -596,6 +597,7 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 #format-charging-underline = #ffd000
 label-charging =  %percentage%
+label-charging-foreground = #ebdbb2
 
 #format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging = <label-discharging> <ramp-capacity> <label-discharging>

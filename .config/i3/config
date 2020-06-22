@@ -1,5 +1,5 @@
-#set $background "lake.jpg"
-set $background "manjaro.png"
+set $background "cartoonlake.png"
+#set $background "manjaro.png"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
 
@@ -17,7 +17,7 @@ font pango:GoogleSans-Regular 10
 
 # Gaps
 for_window [class="^.*"] border pixel 3
-gaps inner 14
+gaps inner 10
 gaps outer 1
 title_align center
 smart_gaps on
