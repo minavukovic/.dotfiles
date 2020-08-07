@@ -1,4 +1,4 @@
-set $background "cartoonlake.png"
+set $background "hillssunset.jpeg"
 #set $background "manjaro.png"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
@@ -71,6 +71,10 @@ bindsym $mod+l focus right
 # use arrow keys to switch workspaces
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
+
+# move workspace across different monitors
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -410,7 +414,7 @@ bindsym F11 exec --no-startup-id playerctl play-pause &
 bindsym F12 exec --no-startup-id playerctl next &
 
 # workspace back and forth
-bindsym $mod+grave workspace back_and_forth
+bindsym $mod+Tab workspace back_and_forth
 
 #### scratchpad
 # Make the currently focused window a scratchpad
@@ -420,6 +424,11 @@ bindsym $mod+minus scratchpad show
 
 # rofi search script
 bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
+# rofi file search
+bindsym $mod+Control+Shift+d exec --no-startup-id xdg-open "$(locate home | rofi -lines 10 -theme blocks.rasi -padding 0 -dmenu -i -p "locate:")"
 
 # battery notification
 bindsym $mod+Control+p exec --no-startup-id /home/mina/.config/i3/battery.sh
+
+# open Display programme in floating always
+for_window [class="Display" instance="display"] floating enable

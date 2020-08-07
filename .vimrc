@@ -75,9 +75,13 @@ Plug 'tpope/vim-commentary'
 "Plug 'kovetskiy/sxhkd-vim'
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'chrisbra/Colorizer'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 syntax on
+
+" goyo config
+let g:goyo_linenr = 1
 
 " open nerd tree
 map <C-n> :NERDTreeToggle<CR>

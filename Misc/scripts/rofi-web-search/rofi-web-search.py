@@ -8,6 +8,7 @@ import sys
 import os
 import datetime
 import gzip
+import webbrowser
 
 import subprocess as sp
 
@@ -133,7 +134,13 @@ def main():
 
     else:
         url = CONFIG['SEARCH_URL'][SEARCH_ENGINE] + urllib.parse.quote_plus(search_string)
-        sp.Popen(CONFIG['BROWSER_PATH'][BROWSER] + [url], stdout=sp.DEVNULL, stderr=sp.DEVNULL, shell=False)
+
+        # open link in new tab
+#        sp.Popen(CONFIG['BROWSER_PATH'][BROWSER] + [url], stdout=sp.DEVNULL, stderr=sp.DEVNULL, shell=False)
+
+        # open link in new window
+        search_query  = "https://www.google.com.tr/search?q={}".format(urllib.parse.quote_plus(search_string))
+        webbrowser.open_new(search_query)
 
 def validate_config(c):
     if type(c) != dict:

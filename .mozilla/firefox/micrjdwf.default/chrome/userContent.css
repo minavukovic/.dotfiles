@@ -1,26 +1,9 @@
-/* Removes white loading page */
+:root{
+	scrollbar-width: none !important;
+}
 
-@-moz-document url(about:blank), url(about:newtab), url(about:home) {
-    html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
-      background: #1d2021 !important;
-    }
-  }
-  
-
-  /* Hide scrollbar */
- /* 
-  :root{
-    scrollbar-width: none !important;
-  }
-  }
-  
-  @-moz-document url(about:privatebrowsing) { 
-  
-  :root{
-    scrollbar-width: none !important;
-  }
-  }
-  */
-
-:root{ scrollbar-color: rgb(153, 40, 32) rgb(20,19,19) }
-:root{ scrollbar-width: thin } 
+@-moz-document url(about:privatebrowsing) {
+	:root{
+		scrollbar-width: none !important;
+	}
+}
