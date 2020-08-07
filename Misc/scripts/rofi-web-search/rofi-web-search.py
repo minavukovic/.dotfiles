@@ -138,9 +138,14 @@ def main():
         # open link in new tab
 #        sp.Popen(CONFIG['BROWSER_PATH'][BROWSER] + [url], stdout=sp.DEVNULL, stderr=sp.DEVNULL, shell=False)
 
-        # open link in new window
-        search_query  = "https://www.google.com.tr/search?q={}".format(urllib.parse.quote_plus(search_string))
-        webbrowser.open_new(search_query)
+        # if query is a website with .com, open that page.
+        if '.com' in urllib.parse.quote_plus(search_string):
+            webbrowser.open_new(urllib.parse.quote_plus(search_string))
+
+        # else, it's a search query, so open google search in new window
+        else:
+            search_query  = "https://www.google.com.tr/search?q={}".format(urllib.parse.quote_plus(search_string))
+            webbrowser.open_new(search_query)
 
 def validate_config(c):
     if type(c) != dict:
