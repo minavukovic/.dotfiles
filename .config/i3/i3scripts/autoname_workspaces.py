@@ -100,7 +100,7 @@ WINDOW_ICONS = {
     'simplescreenrecorder': fa.icons['video'],
     'slack': fa.icons['slack'],
     'slic3r.pl': fa.icons['cube'],
-    'spotify': fa.icons['music'],  # could also use the 'spotify' icon
+    'spotify': fa.icons['spotify'],  # could also use the 'music' icon
     'st': fa.icons['terminal'],
     'steam': fa.icons['steam'],
     'subl': fa.icons['code'],

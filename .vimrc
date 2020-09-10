@@ -73,7 +73,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 "Plug 'vifm/vifm.vim'
 "Plug 'kovetskiy/sxhkd-vim'
-"Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/goyo.vim'
 
@@ -85,6 +85,9 @@ let g:goyo_linenr = 1
 
 " open nerd tree
 map <C-n> :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree
+autocmd vimenter * wincmd l
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:vimtex_view_general_options = 'zathura'
 let g:vimtex_view_method = 'zathura'

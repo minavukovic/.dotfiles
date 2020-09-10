@@ -28,6 +28,8 @@ primary = #ffb52a
 secondary = #e60053
 ;alert = #45201b
 alert = #aa000000 
+main = #DA5D49
+; main = #d16934
 
 
 ########################################################
@@ -98,7 +100,7 @@ alert = #aa000000
 ;battery-icon = #DA5D49
 
 ####### transparent theme
-active-focused-workspace = #DA5D49
+active-focused-workspace = ${colors.main}
 time-colour = #66000000
 music-colour = #66000000
 sound-colour = #66000000
@@ -106,12 +108,12 @@ date-colour = #66000000
 wifi-colour = #66000000
 battery-colour = #66000000
 text-colour = #ebdbb2
-time-icon = #DA5D49
-music-icon = #DA5D49
-sound-icon = #DA5D49
-date-icon = #DA5D49
-wifi-icon = #DA5D49
-battery-icon = #DA5D49
+time-icon = ${colors.main}
+music-icon = ${colors.main}
+sound-icon = ${colors.main}
+date-icon = ${colors.main}
+wifi-icon = ${colors.main}
+battery-icon = ${colors.main}
 
 ######################################################
 
@@ -125,76 +127,9 @@ active-unfocused-foreground = #000000
 #text-colour = #000000
 ;text-colour = #ebdbb2
 
-[bar/laptopdocked]
-bottom = false
-monitor = ${env:MONITOR:eDP1}
-
-# added for external monitor with hdmi plugged into dock
-monitor-strict = true 
-
-width = 100%
-height = 19
-;offset-x = 1%
-;offset-y = 1%
-radius = 1.0
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 0
-;border-size = 4
-border-color = #00000000
-
-padding-left = 0
-padding-right = 0
-
-# set to 0 if using arrows between modules
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = GoogleSans_Regular:pixelsize=10;3
-#font-0 = Hack:pixelsize=10;3
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = FontAwesome:pixelsize=13;3
-font-4 = Hack:pixelsize=10;3
-; font-0 = Hack:pixelsize=10;3
-; font-1 = FontAwesome:pixelsize=13;3
-; font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
-; font-3 = siji:pixelsize=10;1
-
-modules-left = i3 xwindow
-;modules-center = date
-modules-center = time 
-#modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-;modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
-modules-right = musicPlayer pulseaudio date wireless-network battery-one battery-zero
-
-#tray-position = right
-tray-padding = 2
-tray-background = ${colors.background} 
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
 [bar/example]
 bottom = false
-monitor = ${env:MONITOR:HDMI2}
+monitor = ${env:MONITOR:}
 
 # added for external monitor with hdmi plugged into dock
 monitor-strict = true 
@@ -241,7 +176,7 @@ modules-center = time
 ;modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
 modules-right = musicPlayer pulseaudio date wireless-network battery-one battery-zero
 
-#tray-position = right
+; tray-position = right
 tray-padding = 2
 tray-background = ${colors.background} 
 
@@ -298,7 +233,7 @@ click-right = playerctl next &
 click-middle = playerctl play-pause &
 format-background = ${colors.music-colour}
 format-foreground = ${colors.text-colour} 
-format-prefix = "   "
+format-prefix = "   "
 format-suffix = " "
 format-prefix-foreground = ${colors.music-icon} 
 

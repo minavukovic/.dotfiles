@@ -163,6 +163,7 @@ alias conf="cd ~/.config"
 alias src="source ~/.bashrc"
 alias doit="sudo !!"
 alias commands="~/Misc/scripts/commands.sh"
+alias remall="rm -r *"
 
 sch() {
 	cd ~/school/$1
