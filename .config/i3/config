@@ -1,4 +1,4 @@
-set $background "Dark.jpg"
+set $background "desertmountain.jpg"
 #set $background "manjaro.png"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:GoogleSans-Regular 10
 
 # Gaps
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 1
 title_align center
@@ -38,6 +38,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id st
+bindsym $mod+Shift+Return exec --no-startup-id st
 bindsym $mod+KP_Enter exec --no-startup-id st
 
 # kill focused window
@@ -49,7 +50,16 @@ bindsym --whole-window $mod+button2 kill
 #bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec dmenu_run -i -l 5 -fn Hack-14 -nb '#000000' -nf '#f46b42' -sb '#353532' -sf '#edd7d0'
 #bindsym $mod+d exec --no-startup-id rofi -show run -display-run -theme config.rasi ""
+
+# rofi search
 bindsym $mod+d exec rofi -modi "window#run#ssh" -show drun -theme blocks.rasi -location 0
+# rofi show open windows
+bindsym $mod+Tab exec rofi -show "window" -show drun -theme blocks.rasi -location 0
+# rofi search script
+bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
+# rofi file search
+bindsym $mod+Control+Shift+d exec --no-startup-id xdg-open "$(locate home | rofi -lines 10 -theme blocks.rasi -padding 0 -dmenu -i -p "locate:")"
+
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -71,6 +81,9 @@ bindsym $mod+l focus right
 # use arrow keys to switch workspaces
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
+# use < and > to move left and right in workspaces
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
 
 # move workspace across different monitors
 bindsym $mod+Ctrl+Left move workspace to output left
@@ -109,7 +122,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Control+space focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+a focus parent
@@ -118,7 +131,7 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # switch mouse focus across monitors
-bindsym $mod+a focus output left
+bindsym $mod+space focus output left
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -132,6 +145,9 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+set $laptop eDP1
+set $hdmi HDMI2
 
 # switch to workspace
 # bindsym $mod+1 workspace $ws1
@@ -169,6 +185,19 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8 
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+bindsym mod1+1 workspace number 11
+bindsym mod1+2 workspace number 12
+bindsym mod1+3 workspace number 13
+bindsym mod1+4 workspace number 14
+bindsym mod1+5 workspace number 15
+bindsym mod1+6 workspace number 16
+bindsym mod1+7 workspace number 17
+bindsym mod1+8 workspace number 18
+bindsym mod1+9 workspace number 19
+bindsym mod1+0 workspace number 20
+
+#workspace number 2 output $laptop
+#workspace number 11 output $laptop
 
 # move to workspace and don't snap to it
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -181,6 +210,16 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
+bindsym mod1+Shift+1 move container to workspace number 11
+bindsym mod1+Shift+2 move container to workspace number 12
+bindsym mod1+Shift+3 move container to workspace number 13
+bindsym mod1+Shift+4 move container to workspace number 14
+bindsym mod1+Shift+5 move container to workspace number 15
+bindsym mod1+Shift+6 move container to workspace number 16
+bindsym mod1+Shift+7 move container to workspace number 17
+bindsym mod1+Shift+8 move container to workspace number 18
+bindsym mod1+Shift+9 move container to workspace number 19
+bindsym mod1+Shift+0 move container to workspace number 20
 
 # move to workspace and snap to that workspace
 bindsym $mod+Control+1 move container to workspace number 1; workspace number 1
@@ -193,6 +232,16 @@ bindsym $mod+Control+7 move container to workspace number 7; workspace number 7
 bindsym $mod+Control+8 move container to workspace number 8; workspace number 8
 bindsym $mod+Control+9 move container to workspace number 9; workspace number 9
 bindsym $mod+Control+0 move container to workspace number 10; workspace number 10
+bindsym mod1+Control+1 move container to workspace number 11; workspace number 11
+bindsym mod1+Control+2 move container to workspace number 12; workspace number 12
+bindsym mod1+Control+3 move container to workspace number 13; workspace number 13
+bindsym mod1+Control+4 move container to workspace number 14; workspace number 14
+bindsym mod1+Control+5 move container to workspace number 15; workspace number 15
+bindsym mod1+Control+6 move container to workspace number 16; workspace number 16
+bindsym mod1+Control+7 move container to workspace number 17; workspace number 17
+bindsym mod1+Control+8 move container to workspace number 18; workspace number 18
+bindsym mod1+Control+9 move container to workspace number 19; workspace number 19
+bindsym mod1+Control+0 move container to workspace number 20; workspace number 20
 
 # numeric keypad with numlock OFF: switch to this workspace
 bindsym KP_End workspace number 1 
@@ -222,7 +271,7 @@ bindsym $mod+KP_Insert move container to workspace number 10
 # reload the configuration file
 #bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart ~/.config/polybar/launch.sh
+bindsym $mod+Shift+Control+r restart ~/.config/polybar/launch.sh
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -270,12 +319,8 @@ set $text-colour-dark	 #0a0a0a
 set $inactive-text-color #ebdbb2
 #set $urgent-bg-color     #E53935
 set $urgent-bg-color     #170505
-#set $border-colour		 #9b6207
-#set $border-colour		 #9c6506
-#set $border-colour		 #8e2626 red 
-#set $border-colour		 #fe6f61 pink
 set $border-colour		 #DA5D49
-#set $border-colour		 #C5B358 
+# set $border-colour		 #d16934
 
 # window colors
 #                       border              background         	text                 	indicator
@@ -348,7 +393,7 @@ bindsym $mod+Control+t exec ~/.trackpad.sh
 #exec --no-startup-id redshift-gtk &
 
 # Compton (transpacency)
-exec_always compton
+exec_always picom
 
 # lock after lid close
 exec --no-startup-id xss-lock -- ~/.config/i3/.lock.sh
@@ -368,7 +413,7 @@ bindsym F9 exec ~/.config/i3/clock.sh
 exec_always libinput-gestures-setup start
 
 # latex equation plug in 
-bindsym $mod+p exec --no-startup-id ~/.config/i3/Latex-picker/dmenulatex-type.sh
+bindsym $mod+Control+Shift+l exec --no-startup-id ~/.config/i3/Latex-picker/dmenulatex-type.sh
 
 # firefox, firefox dev, chrome shortcuts
 bindsym $mod+c exec --no-startup-id firefox
@@ -408,7 +453,6 @@ bindsym $mod+Control+Shift+x exec --no-startup-id redshift -O 3700
 
 # spotify
 bindsym $mod+Shift+s exec --no-startup-id spotify
-for_window [class="spotify"] move container to workspace 1
 
 # dolphin
 bindsym $mod+Shift+d exec --no-startup-id dolphin
@@ -422,7 +466,7 @@ bindsym F11 exec --no-startup-id playerctl play-pause &
 bindsym F12 exec --no-startup-id playerctl next &
 
 # workspace back and forth
-bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+grave workspace back_and_forth
 
 #### scratchpad
 # Make the currently focused window a scratchpad
@@ -430,14 +474,29 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# rofi search script
-bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
-# rofi file search
-bindsym $mod+Control+Shift+d exec --no-startup-id xdg-open "$(locate home | rofi -lines 10 -theme blocks.rasi -padding 0 -dmenu -i -p "locate:")"
-
 # battery notification
 bindsym $mod+Control+p exec --no-startup-id /home/mina/.config/i3/battery.sh
 
 # open Display programme in floating always
 for_window [class="Display" instance="display"] floating enable
+for_window [class="Tk" instance="tk"] floating enable resize set 1200 800
 
+# swap escape and caps
+exec_always /home/mina/Misc/scripts/swapcaps.sh
+bindsym $mod+Shift+Control+plus exec --no-startup-id /home/mina/Misc/scripts/swapcaps.sh
+
+# system shutdown/suspend/sleep/reboot etc
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id /home/mina/.config/i3/i3exit.sh lock, mode "default"
+    bindsym e exec --no-startup-id /home/mina/.config/i3/i3exit.sh logout, mode "default"
+    bindsym s exec --no-startup-id /home/mina/.config/i3/i3exit.sh suspend, mode "default"
+    bindsym h exec --no-startup-id /home/mina/.config/i3/i3exit.sh hibernate, mode "default"
+    bindsym r exec --no-startup-id /home/mina/.config/i3/i3exit.sh reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id /home/mina/.config/i3/i3exit.sh shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+Control+BackSpace mode "$mode_system"
