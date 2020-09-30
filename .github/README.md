@@ -18,3 +18,5 @@ Make sure to have git installed, then:
 *Note that if you already have some of the files you'll get an error message. You can either (1) delete them or (2) back
 them up somewhere else.*
 
+Image of how the setup up looks:
+![Image of setup](https://github.com/minavukovic/.dotfiles/tree/master/.github/setup.jpg)
