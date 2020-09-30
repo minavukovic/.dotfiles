@@ -11,12 +11,12 @@ case "$1" in
         i3-msg exit
         ;;
     suspend)
-        # lock && systemctl suspend
-        systemctl suspend
+        lock && systemctl suspend
+        # systemctl suspend
         ;;
     hibernate)
-        # lock && systemctl hibernate
-        systemctl hibernate
+        lock && systemctl hibernate
+        # systemctl hibernate
         ;;
     reboot)
         systemctl reboot

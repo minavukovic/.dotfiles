@@ -29,6 +29,7 @@ secondary = #e60053
 ;alert = #45201b
 alert = #aa000000 
 main = #DA5D49
+; main = #cf5149 ;darker version of above
 ; main = #d16934
 
 
