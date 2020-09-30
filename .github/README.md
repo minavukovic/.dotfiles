@@ -19,4 +19,4 @@ Make sure to have git installed, then:
 them up somewhere else.*
 
 Image of how the setup up looks:
-![Image of setup](https://github.com/minavukovic/.dotfiles/tree/master/.github/setup.jpg)
+![Screenshot](https://github.com/minavukovic/.dotfiles/tree/master/.github/setup.jpg)
