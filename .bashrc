@@ -146,6 +146,7 @@ alias vi="vim"
 # SHORTCUTS 
 alias ll="ls -l"
 alias la="ls -a"
+alias l="ls"
 
 alias r="ranger"
 alias z="zathura"

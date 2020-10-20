@@ -1,4 +1,4 @@
-set $background "desertmountain.jpg"
+set $background "abstractdiamonds.jpg"
 #set $background "manjaro.png"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:GoogleSans-Regular 10
 
 # Gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 gaps inner 10
 gaps outer 1
 title_align center
@@ -38,7 +38,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id st
-bindsym $mod+Shift+Return exec --no-startup-id st
+# floating terminal
+bindsym $mod+Shift+Return exec --no-startup-id st -class=floating_st
+for_window [class="floating_st"] floating enable
 bindsym $mod+KP_Enter exec --no-startup-id st
 
 # kill focused window
@@ -54,7 +56,7 @@ bindsym --whole-window $mod+button2 kill
 # rofi search
 bindsym $mod+d exec rofi -modi "window#run#ssh" -show drun -theme blocks.rasi -location 0
 # rofi show open windows
-bindsym $mod+Tab exec rofi -show "window" -show drun -theme blocks.rasi -location 0
+bindsym $mod+Shift+Tab exec rofi -show "window" -show drun -theme blocks.rasi -location 0
 # rofi search script
 bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
 # rofi file search
@@ -358,9 +360,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 # Fn keys
-bindsym F8 exec ~/.config/i3/.volume.sh 1 #increase
-bindsym F7 exec ~/.config/i3/.volume.sh 2 #decrease
-bindsym F5 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+F8 exec ~/.config/i3/.volume.sh 1 #increase
+bindsym $mod+F7 exec ~/.config/i3/.volume.sh 2 #decrease
+bindsym $mod+F5 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
@@ -369,19 +371,19 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 # DUAL MONITOR SETUP
 # DUAL ON
 # hdmi
-bindsym F3 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --primary --mode 2560x1440 --pos 1920x0 --rotate normal --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
+bindsym $mod+F3 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --primary --mode 2560x1440 --pos 1920x0 --rotate normal --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
 
 
 
 # DUAL OFF
 #hdmi
-bindsym F4 exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
-bindsym F2 exec xrandr --auto; exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+bindsym $mod+F4 exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
+bindsym $mod+F2 exec xrandr --auto; exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
 
 # BRIGHTNESS
 #dim 
-bindsym $mod+F11 exec xrandr --output HDMI2 --brightness 0.6
-bindsym $mod+F12 exec xrandr --output HDMI2 --brightness 1
+bindsym $mod+Shift+F11 exec xrandr --output HDMI2 --brightness 0.6
+bindsym $mod+Shift+F12 exec xrandr --output HDMI2 --brightness 1
 
 
 # Trackpad 
@@ -462,12 +464,12 @@ bindsym $mod+Shift+d exec --no-startup-id dolphin
 bindsym $mod+Shift+a exec --no-startup-id caprine
 
 # playerctl music controls
-bindsym F10 exec --no-startup-id playerctl previous &
-bindsym F11 exec --no-startup-id playerctl play-pause &
-bindsym F12 exec --no-startup-id playerctl next &
+bindsym $mod+F10 exec --no-startup-id playerctl previous &
+bindsym $mod+F11 exec --no-startup-id playerctl play-pause &
+bindsym $mod+F12 exec --no-startup-id playerctl next &
 
 # workspace back and forth
-bindsym $mod+grave workspace back_and_forth
+bindsym $mod+Tab workspace back_and_forth
 
 #### scratchpad
 # Make the currently focused window a scratchpad
