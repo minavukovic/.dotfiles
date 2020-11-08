@@ -49,6 +49,7 @@ bindsym $alt+KP_Enter exec --no-startup-id st
 
 # kill focused window
 bindsym $alt+Shift+q kill
+bindsym $mod+Shift+q kill
 # kill with mod and middle button on mouse
 bindsym --whole-window $mod+button2 kill
 
@@ -58,13 +59,13 @@ bindsym --whole-window $mod+button2 kill
 #bindsym $mod+d exec --no-startup-id rofi -show run -display-run -theme config.rasi ""
 
 # rofi search
-bindsym $alt+d exec rofi -modi "window#run#ssh" -show drun -theme blocks.rasi -location 0
+bindsym $mod+d exec rofi -modi "window#run#ssh" -show drun -theme blocks.rasi -location 0
 # rofi show open windows
 bindsym $alt+Shift+Tab exec rofi -show "window" -show drun -theme blocks.rasi -location 0
 # rofi search script
-bindsym $alt+Shift+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
+bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
 # rofi file search
-bindsym $alt+Control+Shift+d exec --no-startup-id xdg-open "$(locate home | rofi -lines 10 -theme blocks.rasi -padding 0 -dmenu -i -p "locate:")"
+bindsym $mod+Control+Shift+d exec --no-startup-id xdg-open "$(locate home | rofi -lines 10 -theme blocks.rasi -padding 0 -dmenu -i -p "locate:")"
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -468,12 +469,12 @@ bindsym $mod+Shift+d exec --no-startup-id dolphin
 bindsym $mod+Shift+a exec --no-startup-id caprine
 
 # playerctl music controls
-bindsym $mod+F10 exec --no-startup-id playerctl previous &
-bindsym $mod+F11 exec --no-startup-id playerctl play-pause &
-bindsym $mod+F12 exec --no-startup-id playerctl next &
+bindsym $mod+F10 exec --no-startup-id playerctl --player=spotify previous &
+bindsym $mod+F11 exec --no-startup-id playerctl --player=spotify play-pause &
+bindsym $mod+F12 exec --no-startup-id playerctl --player=spotify next &
 
 # workspace back and forth
-bindsym $mod+Tab workspace back_and_forth
+bindsym $alt+Tab workspace back_and_forth
 
 #### scratchpad
 # Make the currently focused window a scratchpad
@@ -507,3 +508,9 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+Control+$alt+BackSpace mode "$mode_system"
+
+# open keymap pdf
+bindsym $mod+Shift+Control+$alt+k exec --no-startup-id okular ~/Documents/QMK_Configurator.pdf & disown
+
+# autotiling
+exec_always --no-startup-id autotiling

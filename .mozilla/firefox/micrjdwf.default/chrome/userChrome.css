@@ -141,7 +141,7 @@ T A B S
 .tabbrowser-tab:hover {
 	background-color: none !important;
 	/*background-image: linear-gradient(to left, #c97dff, #ff8989) !important;*/
-	background-image: linear-gradient(to left, #d3869b, #83a598) !important; /*blue->purple*/
+	background-image: linear-gradient(to left, #83a598, #fb4934) !important; /*blue->purple*/
 	/*background-image: linear-gradient(to left, #C05B7B, #65375C) !important;*/ /*purple->white*/
 /*	background-image: linear-gradient(to left, #E67B51, #C93F3F) !important; /*orangey*/
 	color: black !important;
@@ -150,7 +150,8 @@ T A B S
 .tabbrowser-tab[selected="true"] {
 	background-color: none !important;
 /*	background-image: linear-gradient(to left, #fff59d, #c05057) !important;*/
-	background-image: linear-gradient(to left, #fabd2f, #fb4934) !important;
+	/* background-image: linear-gradient(to left, #fabd2f, #fb4934) !important; */ /*orange->yellow */
+	background-image: linear-gradient(to left, #a89984, #a89984) !important;
 	color: black !important;
 	font-weight: var(--tab-font-weight) !important;
 }

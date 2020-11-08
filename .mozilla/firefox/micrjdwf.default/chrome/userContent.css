@@ -1,6 +1,8 @@
-:root{
-	scrollbar-width: none !important;
-}
+/* :root{ */
+/* 	scrollbar-width: thin !important; */
+/* } */
+:root{ scrollbar-color: #665c54 #212121  }
+*{ scrollbar-width: thin !important }
 
 @-moz-document url(about:privatebrowsing) {
 	:root{
