@@ -116,6 +116,21 @@ date-icon = ${colors.main}
 wifi-icon = ${colors.main}
 battery-icon = ${colors.main}
 
+####### transparent rainbow theme
+; active-focused-workspace = ${colors.main}
+; time-colour = #66000000
+; music-colour = #66000000
+; sound-colour = #66000000
+; date-colour = #66000000
+; wifi-colour = #66000000
+; battery-colour = #66000000
+; text-colour = #ebdbb2
+; time-icon = ${colors.main}
+; music-icon = #fb4934
+; sound-icon = #fe8019
+; date-icon = #fabd2f
+; wifi-icon = #b8bb26
+; battery-icon = #83a598
 ######################################################
 
 ### workspace colours

@@ -1,4 +1,4 @@
-set $background "abstractdiamonds.jpg"
+set $background "gruvbox.png"
 #set $background "manjaro.png"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
@@ -491,7 +491,7 @@ for_window [class="Tk" instance="tk"] floating enable resize set 1200 800
 
 # swap escape and caps
 exec_always /home/mina/Misc/scripts/swapcaps.sh
-bindsym $mod+Shift+Control+plus exec --no-startup-id /home/mina/Misc/scripts/swapcaps.sh
+bindsym $mod+$alt+Shift+Control+plus exec --no-startup-id /home/mina/Misc/scripts/swapcaps.sh
 
 # system shutdown/suspend/sleep/reboot etc
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -510,7 +510,7 @@ mode "$mode_system" {
 bindsym $mod+Shift+Control+$alt+BackSpace mode "$mode_system"
 
 # open keymap pdf
-bindsym $mod+Shift+Control+$alt+k exec --no-startup-id okular ~/Documents/QMK_Configurator.pdf & disown
+bindsym $mod+Shift+Control+$alt+k exec --no-startup-id zathura ~/Documents/QMK_Configurator.pdf & disown
 
 # autotiling
 exec_always --no-startup-id autotiling

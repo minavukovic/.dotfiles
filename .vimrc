@@ -18,6 +18,7 @@ set whichwrap+=<,>h,l
 set showmatch "highlight matching brackets
 " set mouse=a
 set relativenumber
+set cursorline
 
 " Delete trailing white space on save
 fun! CleanExtraSpaces()
@@ -76,9 +77,16 @@ Plug 'tpope/vim-commentary'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/goyo.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 syntax on
+
+" utilsnips config
+let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " goyo config
 let g:goyo_linenr = 1
@@ -96,7 +104,7 @@ let g:latex_view_general_viewer = 'zathura'
 " airline status config
 let g:airline_theme='gruvbox'
 
-"let mapleader=" "
+" let mapleader=" "
 
 " Navigating with guides
 "inoremap <leader><leader> <Esc>/<Enter>"_c4l
@@ -104,8 +112,9 @@ let g:airline_theme='gruvbox'
 "map <leader><leader> <Esc>/<++><Enter>"_c4l
 
 " map jump to <++> ##### leader is \
-"inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
-inoremap <C-@> <Esc>/<++><Enter>"_c4l
+" inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+" inoremap <C-@> <Esc>/<++><Enter>"_c4l
+inoremap <Space><tab> <Esc>/<++><Enter>"_c4l
 
 " latex snippets
 """LATEX
@@ -181,6 +190,3 @@ map <space>h :wincmd h<CR>
 map <space>j :wincmd j<CR>
 map <space>k :wincmd k<CR>
 map <space>l :wincmd l<CR>
-
-" highlight cursor line
-nnoremap <leader>] :set cursorline!<CR>
