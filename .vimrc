@@ -112,8 +112,26 @@ let g:airline_left_sep = '▶'
 
 
 " ---------------------------------- Key Mappings ----------------------------------
+"  toggle plugins
 map <C-n> :NERDTreeToggle<CR>
-map <C-g> :Goyo<CR>
+map <silent> <C-g> :Goyo<CR>
+
+" navigating split views
+map <space>h :wincmd h<CR>
+map <space>j :wincmd j<CR>
+map <space>k :wincmd k<CR>
+map <space>l :wincmd l<CR>
+
+" select lines to move them around
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+
+" jump to <++>
+inoremap <Space><tab> <Esc>/<++><Enter>"_c4l
+
+" disable these shortcuts
+nnoremap Q <nop>
+nnoremap <C-s> <nop>
 
 " ---------------------------------- Shortcuts ----------------------------------
 " let mapleader=" "
@@ -126,7 +144,6 @@ map <C-g> :Goyo<CR>
 " map jump to <++> ##### leader is \
 " inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 " inoremap <C-@> <Esc>/<++><Enter>"_c4l
-inoremap <Space><tab> <Esc>/<++><Enter>"_c4l
 
 " latex snippets
 """LATEX
@@ -194,12 +211,3 @@ autocmd Filetype markdown inoremap ;3 ###<Space><Space><Enter><++><Esc>k<Space>i
 autocmd Filetype * nnoremap <silent> ;= :set paste<CR>
 autocmd Filetype * nnoremap <silent> ;- :set nopaste<CR>
 
-" navigating split views
-map <space>h :wincmd h<CR>
-map <space>j :wincmd j<CR>
-map <space>k :wincmd k<CR>
-map <space>l :wincmd l<CR>
-
-" select lines to move them around
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
