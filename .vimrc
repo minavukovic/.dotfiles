@@ -1,3 +1,4 @@
+" ---------------------------------- General Settings ----------------------------------
 set tabstop=4
 syntax enable
 set number
@@ -19,7 +20,9 @@ set showmatch "highlight matching brackets
 " set mouse=a
 set relativenumber
 set cursorline
+syntax on
 
+" ---------------------------------- Functions & Scripts ----------------------------------
 " Delete trailing white space on save
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
@@ -36,13 +39,6 @@ endif
 " Save upon losing focus
 au FocusLost * :wa
 
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_italicize_strings=1
-let g:gruvbox_italicize_comments=1
-let g:gruvbox_termcolors=16
-colorscheme gruvbox
-set background=dark
-highlight Normal guibg=black
 
 " Expand tabs in C files to spaces
 "au BufRead,BufNewFile *.{c,h,java} set expandtab
@@ -56,9 +52,20 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" run pandoc
+command P !~/.config/i3/pand.sh %
+" ---------------------------------- Colours ----------------------------------
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italicize_strings=1
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_termcolors=16
+colorscheme gruvbox
+set background=dark
+highlight Normal guibg=black
 
 
 
+" ---------------------------------- Plugins (VimPlugged) ----------------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'https://github.com/junegunn/vim-plug.git'
@@ -81,7 +88,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 call plug#end()
-syntax on
 
 " utilsnips config
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -104,6 +110,7 @@ let g:latex_view_general_viewer = 'zathura'
 " airline status config
 let g:airline_theme='gruvbox'
 
+" ---------------------------------- Shortcuts ----------------------------------
 " let mapleader=" "
 
 " Navigating with guides
@@ -178,9 +185,6 @@ autocmd Filetype markdown inoremap ;' ""<Space><++><Esc>5hi
 autocmd Filetype markdown inoremap ;3 ###<Space><Space><Enter><++><Esc>k<Space>i
 "autocmd Filetype * inoremap ;{ {<CR>}<Esc>ko<BS>
 
-" run pandoc
-command P !~/.config/i3/pand.sh %
-
 " set paste
 autocmd Filetype * nnoremap <silent> ;= :set paste<CR>
 autocmd Filetype * nnoremap <silent> ;- :set nopaste<CR>
@@ -190,3 +194,7 @@ map <space>h :wincmd h<CR>
 map <space>j :wincmd j<CR>
 map <space>k :wincmd k<CR>
 map <space>l :wincmd l<CR>
+
+" select lines to move them around
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
