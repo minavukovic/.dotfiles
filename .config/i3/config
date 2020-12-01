@@ -1,5 +1,5 @@
-set $background "gruvbox.png"
-#set $background "manjaro.png"
+# set $background "gruvbox.png"
+set $background "spiderverse1.jpg"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
 
@@ -17,7 +17,7 @@ set $alt mod1
 font pango:GoogleSans-Regular 10
 
 # Gaps
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 4
 gaps inner 10
 gaps outer 1
 title_align center

@@ -1,4 +1,5 @@
 " ---------------------------------- General Settings ----------------------------------
+
 set tabstop=4
 syntax enable
 set number
@@ -21,6 +22,15 @@ set showmatch "highlight matching brackets
 set relativenumber
 set cursorline
 syntax on
+
+" " Change mouse on insert mode
+" let &t_SI = "\e[6 q"
+" let &t_EI = "\e[2 q"
+" " Optionally reset the cursor on start:
+" augroup myCmds
+" au!
+" autocmd VimEnter * silent !echo -ne "\e[2 q"
+" augroup END
 
 " ---------------------------------- Functions & Scripts ----------------------------------
 " Delete trailing white space on save
@@ -54,6 +64,7 @@ endif
 
 " run pandoc
 command P !~/.config/i3/pand.sh %
+
 " ---------------------------------- Colour Settings ----------------------------------
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_italicize_strings=1
@@ -61,7 +72,9 @@ let g:gruvbox_italicize_comments=1
 let g:gruvbox_termcolors=16
 colorscheme gruvbox
 set background=dark
-highlight Normal guibg=black
+highlight Normal ctermbg=None
+" highlight Normal guibg=#000000
+
 
 
 

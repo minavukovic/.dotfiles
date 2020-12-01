@@ -141,7 +141,7 @@ ex ()
 
 # vim
 alias vi="vim"
-
+alias v="nvim"
 ######################################################
 # SHORTCUTS 
 alias ll="ls -l"
@@ -155,10 +155,10 @@ alias g="gwenview"
 alias f="feh"
 alias t="tty-clock -cC 4"
 export READER="zathura"
-alias vrc="vi ~/.vimrc"
-alias i3="vi ~/.config/i3/config"
-alias poly="vi ~/.config/polybar/config"
-alias brc="vi ~/.bashrc"
+alias vrc="v ~/.vimrc"
+alias i3="v ~/.config/i3/config"
+alias poly="v ~/.config/polybar/config"
+alias brc="v ~/.bashrc"
 alias home="cd ~"
 alias down="cd ~/Downloads"
 alias conf="cd ~/.config"
