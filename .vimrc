@@ -54,7 +54,7 @@ endif
 
 " run pandoc
 command P !~/.config/i3/pand.sh %
-" ---------------------------------- Colours ----------------------------------
+" ---------------------------------- Colour Settings ----------------------------------
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_italicize_strings=1
 let g:gruvbox_italicize_comments=1
@@ -70,22 +70,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'https://github.com/junegunn/vim-plug.git'
 Plug 'lervag/vimtex'
-"Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
-"Plug 'jreybert/vimagit'
-"Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
-"Plug 'vifm/vifm.vim'
-"Plug 'kovetskiy/sxhkd-vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/goyo.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+"Plug 'tpope/vim-surround'
+"Plug 'jreybert/vimagit'
+"Plug 'vimwiki/vimwiki'
+"Plug 'vifm/vifm.vim'
+"Plug 'kovetskiy/sxhkd-vim'
 
 call plug#end()
 
@@ -97,8 +97,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " goyo config
 let g:goyo_linenr = 1
 
-" open nerd tree
-map <C-n> :NERDTreeToggle<CR>
+" nerd tree config
 autocmd vimenter * NERDTree
 autocmd vimenter * wincmd l
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -109,6 +108,12 @@ let g:latex_view_general_viewer = 'zathura'
 
 " airline status config
 let g:airline_theme='gruvbox'
+let g:airline_left_sep = '▶'
+
+
+" ---------------------------------- Key Mappings ----------------------------------
+map <C-n> :NERDTreeToggle<CR>
+map <C-g> :Goyo<CR>
 
 " ---------------------------------- Shortcuts ----------------------------------
 " let mapleader=" "
