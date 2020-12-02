@@ -140,7 +140,7 @@ ex ()
 }
 
 # vim
-alias vi="vim"
+alias vi="nvim"
 alias v="nvim"
 ######################################################
 # SHORTCUTS 

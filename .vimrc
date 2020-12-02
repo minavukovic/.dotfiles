@@ -121,7 +121,8 @@ let g:latex_view_general_viewer = 'zathura'
 
 " airline status config
 let g:airline_theme='gruvbox'
-let g:airline_left_sep = '▶'
+" let g:airline_left_sep = '▶'
+let g:airline_powerline_fonts = 1
 
 
 " ---------------------------------- Key Mappings ----------------------------------
