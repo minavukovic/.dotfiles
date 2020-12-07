@@ -491,7 +491,7 @@ for_window [class="Tk" instance="tk"] floating enable resize set 1200 800
 
 # swap escape and caps
 exec_always /home/mina/Misc/scripts/swapcaps.sh
-bindsym $mod+$alt+Shift+Control+plus exec --no-startup-id /home/mina/Misc/scripts/swapcaps.sh
+bindsym $mod+$alt+Shift+Control+z exec --no-startup-id /home/mina/Misc/scripts/swapcaps.sh
 
 # system shutdown/suspend/sleep/reboot etc
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown

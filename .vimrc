@@ -141,7 +141,7 @@ xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
 " jump to <++>
-inoremap <Space><tab> <Esc>/<++><Enter>"_c4l
+inoremap <tab><Space> <Esc>/<++><Enter>"_c4l
 
 " disable these shortcuts
 nnoremap Q <nop>
@@ -210,9 +210,9 @@ autocmd FileType tex inoremap ;prod \prod_{}^{<++>} <++><Esc>T{hhhi
 autocmd FileType tex inoremap ;bs \bigskip
 
 " auto complete brackets
-autocmd Filetype * inoremap ( ()<Space><++><Esc>T(i
-autocmd Filetype * inoremap { {}<Space><++><Esc>T{i
-autocmd Filetype * inoremap [ []<Space><++><Esc>T[i
+autocmd Filetype * inoremap ( ()<++><Esc>T(i
+autocmd Filetype * inoremap { {}<++><Esc>T{i
+autocmd Filetype * inoremap [ []<++><Esc>T[i
 
 autocmd Filetype markdown inoremap ;b ****<Space><++><Esc>6hi
 autocmd Filetype markdown inoremap ;i **<Space><++><Esc>5hi
