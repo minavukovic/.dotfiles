@@ -56,6 +56,7 @@ WINDOW_ICONS = {
     'brave-browser': fa.icons['firefox'],
     'caprine': fa.icons['comment'],
     'chromium': fa.icons['chrome'],
+    'code-oss': fa.icons['code'],
     'cura': fa.icons['cube'],
     'darktable': fa.icons['image'],
     'discord': fa.icons['comment'],
