@@ -514,3 +514,6 @@ bindsym $mod+Shift+Control+$alt+k exec --no-startup-id zathura ~/Documents/QMK_C
 
 # autotiling
 exec_always --no-startup-id autotiling
+
+# screenshot, select region and save to clipboard
+bindsym --release $mod+Shift+p exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
