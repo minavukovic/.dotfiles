@@ -423,10 +423,10 @@ exec_always libinput-gestures-setup start
 bindsym $mod+Control+Shift+l exec --no-startup-id ~/.config/i3/Latex-picker/dmenulatex-type.sh
 
 # firefox, firefox dev, chrome shortcuts
-bindsym $mod+c exec --no-startup-id firefox
-bindsym $mod+Shift+c exec --no-startup-id firefox-developer-edition
+bindsym $mod+c exec firefox
+bindsym $mod+Shift+c exec firefox-developer-edition
 #bindsym $mod+c exec --no-startup-id google-chrome-stable
-bindsym $mod+b exec --no-startup-id chromium
+bindsym $mod+b exec chromium
 
 # notifications
 exec_always dunst
@@ -459,11 +459,11 @@ bindsym $mod+Control+x exec --no-startup-id redshift -x
 bindsym $mod+Control+Shift+x exec --no-startup-id redshift -O 3700
 
 # spotify
-bindsym $mod+Shift+s exec --no-startup-id spotify
+bindsym $mod+Shift+s spotify
 assign [class="spotify"] workspace number 1
 
 # dolphin
-bindsym $mod+Shift+d exec --no-startup-id dolphin
+bindsym $mod+Shift+d exec dolphin
 
 # caprine (messenger)
 bindsym $mod+Shift+a exec --no-startup-id caprine
@@ -478,9 +478,9 @@ bindsym $alt+Tab workspace back_and_forth
 
 #### scratchpad
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+BackSpace move scratchpad
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+BackSpace scratchpad show
 
 # battery notification
 bindsym $mod+Control+p exec --no-startup-id /home/mina/.config/i3/battery.sh
@@ -517,3 +517,6 @@ exec_always --no-startup-id autotiling
 
 # screenshot, select region and save to clipboard
 bindsym --release $mod+Shift+p exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+
+for_window [class="kate"] floating enable
+
