@@ -222,6 +222,6 @@ autocmd Filetype markdown inoremap ;3 ###<Space><Space><Enter><++><Esc>k<Space>i
 "autocmd Filetype * inoremap ;{ {<CR>}<Esc>ko<BS>
 
 " set paste
-autocmd Filetype * nnoremap <silent> ;= :set paste<CR>
-autocmd Filetype * nnoremap <silent> ;- :set nopaste<CR>
+autocmd Filetype * nnoremap <silent> = :set paste<CR>
+autocmd Filetype * nnoremap <silent> - :set nopaste<CR>
 

@@ -153,6 +153,7 @@ alias ll="ls -l"
 alias la="ls -a"
 alias l="ls"
 
+alias vs="code-oss"
 alias r="ranger"
 alias z="zathura"
 alias o="okular"

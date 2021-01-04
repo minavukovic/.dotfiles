@@ -16,8 +16,8 @@ set $alt mod1
 # is used in the bar {} block below.
 font pango:GoogleSans-Regular 10
 
-# Gaps
-for_window [class="^.*"] border pixel 4
+# Gaps: 4
+for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 1
 title_align center
@@ -40,12 +40,19 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec --no-startup-id st
 bindsym $alt+Return exec --no-startup-id st
+# bindsym $mod+Return exec --no-startup-id alacritty
+# bindsym $alt+Return exec --no-startup-id alacritty
 # floating terminal
 bindsym $mod+Shift+Return exec --no-startup-id st -class=floating_st
 bindsym $alt+Shift+Return exec --no-startup-id st -class=floating_st
 for_window [class="floating_st"] floating enable
 bindsym $mod+KP_Enter exec --no-startup-id st
 bindsym $alt+KP_Enter exec --no-startup-id st
+# bindsym $mod+Shift+Return exec alacritty -title=floating_alacritty
+# bindsym $alt+Shift+Return exec alacritty -title=floating_alacritty
+# for_window [title="floating_alacritty"] floating enable
+# bindsym $mod+KP_Enter exec --no-startup-id alacritty
+# bindsym $alt+KP_Enter exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $alt+Shift+q kill
@@ -459,7 +466,7 @@ bindsym $mod+Control+x exec --no-startup-id redshift -x
 bindsym $mod+Control+Shift+x exec --no-startup-id redshift -O 3700
 
 # spotify
-bindsym $mod+Shift+s spotify
+bindsym $mod+Shift+s exec spotify
 assign [class="spotify"] workspace number 1
 
 # dolphin
