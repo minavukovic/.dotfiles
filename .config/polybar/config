@@ -244,9 +244,9 @@ content = "%{T3}%{T-}"
 type = custom/script
 exec = ~/.config/polybar/music_player.sh
 interval = 3
-click-left = playerctl previous &
-click-right = playerctl next &
-click-middle = playerctl play-pause &
+click-left = playerctl --player=spotify previous &
+click-right = playerctl --player=spotify next &
+click-middle = playerctl --player=spotify play-pause &
 format-background = ${colors.music-colour}
 format-foreground = ${colors.text-colour} 
 format-prefix = "   "
