@@ -94,6 +94,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'junegunn/goyo.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'Yggdroot/indentLine'
 "Plug 'tpope/vim-surround'
 "Plug 'jreybert/vimagit'
 "Plug 'vimwiki/vimwiki'
@@ -124,6 +125,12 @@ let g:airline_theme='gruvbox'
 " let g:airline_left_sep = '▶'
 let g:airline_powerline_fonts = 1
 
+
+" indendLine config
+" let g:indentLine_setColors = 0
+" let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+let g:indentLine_enabled = 1
 
 " ---------------------------------- Key Mappings ----------------------------------
 "  toggle plugins
