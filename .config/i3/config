@@ -1,5 +1,5 @@
 # set $background "gruvbox.png"
-set $background "spiderverse1.jpg"
+set $background "polygons.jpg"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
 
@@ -8,6 +8,8 @@ exec_always feh --bg-fill /home/mina/Pictures/$background
 
 # same wallpaper for both monitors
 bindsym $mod+Control+Shift+b exec --no-startup-id ~/.config/i3/randwallpaper.sh
+# wallpaper picker
+bindsym $mod+Control+Shift+n exec --no-startup-id sxiv -tbo -s f -N "Wallpapers" /home/mina/Pictures | xargs /home/mina/.config/i3/setwallpaper.sh
 
 set $mod Mod4
 set $alt mod1
@@ -186,6 +188,9 @@ set $hdmi HDMI2
 # bindsym $mod+Shift+8 move container to workspace $ws8
 # bindsym $mod+Shift+9 move container to workspace $ws9
 # bindsym $mod+Shift+0 move container to workspace $ws10
+
+# open new workspace
+bindsym $alt+a workspace number 30
 
 # this version used for the automate_workspace.py script to show active app icons
 # number row on top
@@ -497,8 +502,8 @@ for_window [class="Display" instance="display"] floating enable
 for_window [class="Tk" instance="tk"] floating enable resize set 1200 800
 
 # swap escape and caps
-exec_always /home/mina/Misc/scripts/swapcaps.sh
-bindsym $mod+$alt+Shift+Control+z exec --no-startup-id /home/mina/Misc/scripts/swapcaps.sh
+#exec_always /home/mina/Misc/scripts/swapcaps.sh
+#bindsym $mod+$alt+Shift+Control+z exec --no-startup-id /home/mina/Misc/scripts/swapcaps.sh
 
 # system shutdown/suspend/sleep/reboot etc
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -527,3 +532,5 @@ bindsym --release $mod+Shift+p exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -s
 
 for_window [class="kate"] floating enable
 
+# sxiv wallpaper picker properties
+for_window [class="Sxiv"] floating enable
