@@ -39,4 +39,6 @@ URxvt.foreground: t_foreground
 
 *.color0: t_background
 
-
+! sxiv
+Sxiv.background: #121212
+Sxiv.foreground: #ebdbb2
