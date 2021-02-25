@@ -1,5 +1,5 @@
 # set $background "gruvbox.png"
-set $background "polygons.jpg"
+set $background "code.jpg"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
 
@@ -100,6 +100,11 @@ bindsym $mod+Right workspace next
 # use < and > to move left and right in workspaces
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
+# move only on current output
+bindsym $alt+Left workspace prev_on_output
+bindsym $alt+Right workspace next_on_output
+bindsym $alt+comma workspace prev_on_output
+bindsym $alt+period workspace next_on_output
 
 # move workspace across different monitors
 bindsym $mod+Ctrl+Left move workspace to output left
