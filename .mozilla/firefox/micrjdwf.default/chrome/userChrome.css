@@ -24,6 +24,7 @@ Here you can change the opacity level and the main color of the browser. Also th
   --srf-color-primary: rgba(2, 2, 2, 0.3);
   --srf-color-selection: #bebebe;
   --srf-color-urlbar: rgba(2, 2, 2, 0.3);
+  --autocomplete-popup-highlight-background: #d65d0e !important;
 }
 
 /* 
@@ -144,8 +145,8 @@ T A B S
 
 .tabbrowser-tab:hover {
 	background-color: none !important;
-	/*background-image: linear-gradient(to left, #c97dff, #ff8989) !important;*/
-	background-image: linear-gradient(to left, #83a598, #fb4934) !important; /*blue->purple*/
+	background-image: linear-gradient(to left, #fabd2f, #fabd2f) !important;
+	/* background-image: linear-gradient(to left, #83a598, #fb4934) !important; /*blue->purple*/*/
 	/*background-image: linear-gradient(to left, #C05B7B, #65375C) !important;*/ /*purple->white*/
 /*	background-image: linear-gradient(to left, #E67B51, #C93F3F) !important; /*orangey*/
 	color: black !important;
@@ -155,7 +156,8 @@ T A B S
 	background-color: none !important;
 /*	background-image: linear-gradient(to left, #fff59d, #c05057) !important;*/
 	/* background-image: linear-gradient(to left, #fabd2f, #fb4934) !important; */ /*orange->yellow */
-	background-image: linear-gradient(to left, #a89984, #a89984) !important;
+	background-image: linear-gradient(to left, #928374, #928374) !important; /* grey */
+	/* background-image: linear-gradient(to left, #fe8019, #fe8019) !important; /1* grey *1/ */
 	color: black !important;
 	font-weight: var(--tab-font-weight) !important;
 }
