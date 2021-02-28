@@ -1,5 +1,5 @@
 # set $background "gruvbox.png"
-set $background "code.jpg"
+set $background "splash.jpeg"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
 
@@ -477,7 +477,7 @@ bindsym $mod+Control+Shift+x exec --no-startup-id redshift -O 3700
 
 # spotify
 bindsym $mod+Shift+s exec spotify
-assign [class="spotify"] workspace number 1
+assign [class="Spotify"] workspace number 1
 
 # dolphin
 bindsym $mod+Shift+d exec dolphin
