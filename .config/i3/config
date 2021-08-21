@@ -343,7 +343,8 @@ set $text-colour-dark	 #0a0a0a
 set $inactive-text-color #ebdbb2
 #set $urgent-bg-color     #E53935
 set $urgent-bg-color     #170505
-set $border-colour		 #DA5D49
+# set $border-colour		 #DA5D49 salmon
+set $border-colour		 #fe8f56
 # set $border-colour		 #d16934
 
 # window colors
@@ -427,7 +428,7 @@ exec --no-startup-id /usr/lib/kdeconnectd
 exec --no-startup-id kdeconnect-indicator
 
 # swap workspaces
-#bindsym $mod+Shift+s exec ~/.config/i3/i3-display-swap.sh
+bindsym $mod+Shift+Control+s exec ~/.config/i3/i3-display-swap.sh
 
 # floating enabled for calendar
 for_window [class="Yad" title="yad-calendar"] floating enable

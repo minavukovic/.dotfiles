@@ -38,7 +38,7 @@ main = #DA5D49
 
 ####### gruvbox rainbow colour scheme
 ; active-focused-workspace = #8ec07c
-; time-colour = #fb4934
+; time-colour = #fb493battery4
 ; music-colour = #fe8019
 ; sound-colour = #fabd2f
 ; date-colour = #b8bb26
@@ -54,7 +54,9 @@ main = #DA5D49
 
 ###### gruvbox alternate colour scheme 
 ; active-focused-workspace = #8ec07c
-active-focused-workspace = #689d6a
+; active-focused-workspace = #689d6a
+active-focused-workspace = #ebdbb2
+xwindow-colour = #fe8f56
 time-colour = #b16286
 music-colour = #98971a
 sound-colour = #d79921
@@ -68,6 +70,7 @@ sound-icon = #0a0a0a
 date-icon = #0a0a0a
 wifi-icon = #0a0a0a
 battery-icon = #0a0a0a
+
 
 ####### orange progression scheme
 ;active-focused-workspace = #8ec07c
@@ -151,7 +154,7 @@ battery-icon = #0a0a0a
 ######################################################
 
 ### workspace colours
-active-unfocused-workspace = #928374
+active-unfocused-workspace = #6e6964
 #active-focused-workspace = #ea994d ######orange
 active-focused-foreground = #000000
 active-unfocused-foreground = #000000
@@ -168,10 +171,11 @@ monitor = ${env:MONITOR:}
 monitor-strict = true 
 
 width = 100%
-height = 19
+height = 21
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 1.0
+; radius = 1.0
+radius = 9.0
 fixed-center = true
 
 background = ${colors.background}
@@ -180,8 +184,8 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 0
-;border-size = 4
+; border-size = 0
+border-size = 3
 border-color = #00000000
 
 padding-left = 0
@@ -189,27 +193,30 @@ padding-right = 0
 
 
 font-0 = GoogleSans_Regular:pixelsize=10;3
+font-1 = Iosevka ExtraBold:style=Bold:size=12;3
 #font-0 = Hack:pixelsize=10;3
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=13;3
 font-4 = Hack:pixelsize=10;3
+font-5 = Symbols Nerd Font:style=Bold:size=17;4
 ; font-0 = Hack:pixelsize=10;3
 ; font-1 = FontAwesome:pixelsize=13;3
 ; font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
 ; font-3 = siji:pixelsize=10;1
 
-modules-left = i3 xwindow
+modules-left = i3 space leftXwindow xwindow rightXwindow
 ;modules-center = date
-modules-center = time 
+modules-center = leftTime time rightTime
 # Set this one if want arrows between
 ; modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
-# Set this one if don't want arrows between
-modules-right = musicPlayer pulseaudio date wireless-network battery-zero battery-one
+;
+# Set this one if don't want arrows between, rounded corners
+modules-right = leftMusic musicPlayer rightMusic space leftSound pulseaudio rightSound space leftDate date rightDate space leftWifi wireless-network rightWifi space leftZero battery-zero rightZero space leftOne battery-one rightOne
 
 # set to 0 if using arrows between modules otherwise set as 1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 module-margin-left = 0
-module-margin-right = 1
+module-margin-right = 0
 
 
 ; tray-position = right
@@ -229,6 +236,92 @@ tray-background = ${colors.background}
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+; rounded modules 
+
+[module/space]
+type = custom/text
+content =  " "
+
+[module/leftTime]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.time-colour}
+
+[module/rightTime]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.time-colour}
+
+[module/leftXwindow]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.xwindow-colour}
+
+[module/rightXwindow]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.xwindow-colour}
+
+[module/leftMusic]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.music-colour}
+
+[module/rightMusic]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.music-colour}
+
+[module/leftSound]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.sound-colour}
+
+[module/rightSound]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.sound-colour}
+
+[module/leftDate]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.date-colour}
+
+[module/rightDate]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.date-colour}
+
+[module/leftWifi]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.wifi-colour}
+
+[module/rightWifi]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.wifi-colour}
+
+[module/leftZero]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.battery-colour}
+
+[module/rightZero]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.battery-colour}
+
+[module/leftOne]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.battery-colour}
+
+[module/rightOne]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.battery-colour}
 
 [module/left4]
 type = custom/text
@@ -283,7 +376,8 @@ type = internal/xwindow
 label = " %title:0:30:...% "
 format-foreground = ${colors.text-colour}
 ; format-background = #d5c4a1
-format-background = #d65d03
+; format-background = #d65d03 darker orange
+format-background = ${colors.xwindow-colour}
 
 [module/xkeyboard]
 type = internal/xkeyboard
