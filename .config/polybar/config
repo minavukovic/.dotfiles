@@ -17,9 +17,9 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #66000000
-#background = #aa000000
+; background = #66000000
+; background = #00000000
+background = #ee1d2021
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -55,22 +55,64 @@ main = #DA5D49
 ###### gruvbox alternate colour scheme 
 ; active-focused-workspace = #8ec07c
 ; active-focused-workspace = #689d6a
-active-focused-workspace = #ebdbb2
-xwindow-colour = #fe8f56
-time-colour = #b16286
-music-colour = #98971a
-sound-colour = #d79921
-date-colour = #d65d0e
-wifi-colour = #458588
-battery-colour = #cc241d
-text-colour = #0a0a0a
-time-icon = #0a0a0a
-music-icon = #0a0a0a
-sound-icon = #0a0a0a
-date-icon = #0a0a0a
-wifi-icon = #0a0a0a
-battery-icon = #0a0a0a
+; active-focused-workspace = #ebdbb2
+; xwindow-colour = #fe8f56
+; time-colour = #b16286
+; music-colour = #98971a
+; sound-colour = #d79921
+; date-colour = #d65d0e
+; wifi-colour = #458588
+; battery-colour = #cc241d
+; text-colour = #0a0a0a
+; time-icon = #0a0a0a
+; music-icon = #0a0a0a
+; sound-icon = #0a0a0a
+; date-icon = #0a0a0a
+; wifi-icon = #0a0a0a
+; battery-icon = #0a0a0a
+; xwindow-text = ${colors.text-colour}
+; time-text = ${colors.text-colour}
+; music-text = ${colors.text-colour}
+; sound-text = ${colors.text-colour}
+; date-text = ${colors.text-colour}
+; wifi-text = ${colors.text-colour}
+; battery-text = ${colors.text-colour}
+; active-unfocused-workspace = #6e6964
+; #active-focused-workspace = #ea994d ######orange
+; active-focused-foreground = #000000
+; active-unfocused-foreground = #000000
+; label-unfocused-foreground = #ebdbb2
+; label-unfocused-background = #9932302f
 
+###### gruvbox grey colour scheme 
+xwindow-colour = #3c3936
+time-colour = #3c3936
+music-colour = #3c3936
+sound-colour = #3c3936
+date-colour = #3c3936
+wifi-colour = #3c3936
+battery-colour = #3c3936
+text-colour = #ebdbb2
+time-icon = #d3869b
+music-icon = #b8bb26
+sound-icon = #fabd2f
+date-icon = #fe8019
+wifi-icon = #83a598
+battery-icon = #fb4934
+xwindow-text = #8ec07c
+time-text = ${colors.time-icon}
+music-text = ${colors.music-icon} 
+sound-text = ${colors.sound-icon}
+date-text = ${colors.date-icon}
+wifi-text = ${colors.wifi-icon}
+battery-text = ${colors.battery-icon}
+active-focused-workspace = #3c3936
+active-unfocused-workspace = #3c3936
+active-focused-foreground = #fe8f56
+active-unfocused-foreground = #bdae93
+label-unfocused-foreground = #7c6f64
+label-unfocused-background = #3c3936
+label-separator-foreground = #3c3936
 
 ####### orange progression scheme
 ;active-focused-workspace = #8ec07c
@@ -154,10 +196,10 @@ battery-icon = #0a0a0a
 ######################################################
 
 ### workspace colours
-active-unfocused-workspace = #6e6964
-#active-focused-workspace = #ea994d ######orange
-active-focused-foreground = #000000
-active-unfocused-foreground = #000000
+; active-unfocused-workspace = #6e6964
+; #active-focused-workspace = #ea994d ######orange
+; active-focused-foreground = #000000
+; active-unfocused-foreground = #000000
 
 ### bar text colour
 #text-colour = #000000
@@ -174,8 +216,8 @@ width = 100%
 height = 21
 ;offset-x = 1%
 ;offset-y = 1%
-; radius = 1.0
-radius = 9.0
+radius = 1.0
+; radius = 9.0
 fixed-center = true
 
 background = ${colors.background}
@@ -184,13 +226,12 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-; border-size = 0
-border-size = 3
+border-size = 0
+; bordersize = 3
 border-color = #00000000
 
 padding-left = 0
 padding-right = 0
-
 
 font-0 = GoogleSans_Regular:pixelsize=10;3
 font-1 = Iosevka ExtraBold:style=Bold:size=12;3
@@ -205,7 +246,7 @@ font-5 = Symbols Nerd Font:style=Bold:size=17;4
 ; font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
 ; font-3 = siji:pixelsize=10;1
 
-modules-left = i3 space leftXwindow xwindow rightXwindow
+modules-left = lefti3 i3 righti3 space leftXwindow xwindow rightXwindow
 ;modules-center = date
 modules-center = leftTime time rightTime
 # Set this one if want arrows between
@@ -237,11 +278,20 @@ tray-background = ${colors.background}
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-; rounded modules 
-
+####### rounded modules 
 [module/space]
 type = custom/text
 content =  " "
+
+[module/lefti3]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.label-unfocused-background}
+
+[module/righti3]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.label-unfocused-background}
 
 [module/leftTime]
 type = custom/text
@@ -361,7 +411,7 @@ click-left = playerctl --player=spotify previous &
 click-right = playerctl --player=spotify next &
 click-middle = playerctl --player=spotify play-pause &
 format-background = ${colors.music-colour}
-format-foreground = ${colors.text-colour} 
+format-foreground = ${colors.music-text} 
 format-prefix = "   "
 format-suffix = " "
 format-prefix-foreground = ${colors.music-icon} 
@@ -374,7 +424,7 @@ type = internal/xwindow
 
 # if there is a background
 label = " %title:0:30:...% "
-format-foreground = ${colors.text-colour}
+format-foreground = ${colors.xwindow-text}
 ; format-background = #d5c4a1
 ; format-background = #d65d03 darker orange
 format-background = ${colors.xwindow-colour}
@@ -449,25 +499,26 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+; label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 ;label-focused = %index%
 label-focused = %name%
-label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-background = ${colors.active-focused-workspace}
 label-focused-foreground = ${colors.active-focused-foreground}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 ;label-unfocused = %index%
 label-unfocused = %name%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-label-unfocused-foreground = #ebdbb2
+label-unfocused-padding = 2
+label-unfocused-foreground = ${colors.label-unfocused-foreground}
 ####################### comment underneath if not using colour background
-label-unfocused-background = #9932302f 
+; label-unfocused-background = #9932302f 
+label-unfocused-background = ${colors.label-unfocused-background}
 
 ; visible = Active workspace on unfocused monitor
 ;label-visible = %index%
@@ -483,11 +534,12 @@ label-visible-padding = ${self.label-focused-padding}
 ;label-urgent = %index%
 label-urgent = %name%
 label-urgent-background = ${colors.active-unfocused-workspace}
-label-urgent-foreground = ${colors.text-colour} 
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-foreground = #fb49934 
+label-urgent-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
+label-separator = %{T2}%{T-}%{T2}%{T-}
+label-separator-foreground = ${colors.label-separator-foreground}
 
 [module/mpd]
 type = internal/mpd
@@ -590,7 +642,7 @@ time-alt = "%H:%M:%S "
 
 format-prefix = "  "
 format-prefix-foreground = ${colors.time-icon} 
-label-foreground = ${colors.text-colour}
+label-foreground = ${colors.time-text}
 #format-underline = #ed6607
 
 label = %date% %time%
@@ -612,7 +664,7 @@ format-prefix-foreground = ${colors.date-icon}
 ;format-offset = 60
 label = "%date%"
 format-prefix = "  "
-label-foreground = ${colors.text-colour} 
+label-foreground = ${colors.date-text} 
 format-foreground = ${colors.text-colour} 
 
 format-background = ${colors.date-colour}
@@ -693,7 +745,7 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
-format-full = "   "
+format-full = "  "
 format-full-foreground = ${colors.battery-icon}
 format-full-background = ${colors.battery-colour}
 
@@ -708,15 +760,15 @@ format-discharging = <ramp-capacity>
 #format-discharging-underline = ${self.format-charging-underline}
 label-discharging = 
 
-format-full-prefix = ""
+; format-full-prefix = ""
 format-full-prefix-foreground = ${colors.battery-icon}
 #format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = "   "
-ramp-capacity-1 = "   "
-ramp-capacity-2 = "   "
-ramp-capacity-3 = "   "
-ramp-capacity-4 = "   "
+ramp-capacity-0 = "  "
+ramp-capacity-1 = "  "
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-4 = "  "
 ramp-capacity-foreground = ${colors.battery-icon} 
 
 animation-charging-0 = 
@@ -740,7 +792,7 @@ type = internal/battery
 battery = BAT1
 adapter = ADP1
 full-at = 98
-format-full = "   "
+format-full = "  "
 format-full-foreground = ${colors.battery-icon}
 format-full-background = ${colors.battery-colour}
 
@@ -755,15 +807,15 @@ format-discharging = <ramp-capacity>
 #format-discharging-underline = ${self.format-charging-underline}
 label-discharging = 
 
-format-full-prefix = ""
+; format-full-prefix = ""
 format-full-prefix-foreground = ${colors.battery-icon} 
 #format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = "   "
-ramp-capacity-1 = "   "
-ramp-capacity-2 = "   "
-ramp-capacity-3 = "   "
-ramp-capacity-4 = "   "
+ramp-capacity-0 = "  "
+ramp-capacity-1 = "  "
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-4 = "  "
 ramp-capacity-foreground = ${colors.battery-icon} 
 
 animation-charging-0 = 
@@ -837,7 +889,7 @@ interval = 3.0
 label-connected = "%essid% "
 format-connected-prefix = "  "
 #format-connected-underline = #e5001a
-label-connected-foreground = ${colors.text-colour} 
+label-connected-foreground = ${colors.wifi-text} 
 format-connected-foreground = ${colors.wifi-icon} 
 format-connected-background = ${colors.wifi-colour}
 
