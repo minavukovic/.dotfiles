@@ -16,12 +16,14 @@
 ;
 ;==========================================================
 
+;================================================
+;                   COLOURS
+;================================================
 [colors]
 ; background = #66000000
 ; background = #00000000
 background = #ee1d2021
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
@@ -34,9 +36,9 @@ main = #DA5D49
 
 
 ########################################################
-# THEME COLOURS
-
-####### gruvbox rainbow colour scheme
+;================================================
+;        GRUVBOX RAINDBOW COLOUR SCHEME
+;================================================
 ; active-focused-workspace = #8ec07c
 ; time-colour = #fb493battery4
 ; music-colour = #fe8019
@@ -52,7 +54,9 @@ main = #DA5D49
 ; wifi-icon = #0a0a0a
 ; battery-icon = #0a0a0a
 
-###### gruvbox alternate colour scheme 
+;================================================
+;        GRUVBOX ALTERNATE COLOUR SCHEME
+;================================================
 ; active-focused-workspace = #8ec07c
 ; active-focused-workspace = #689d6a
 ; active-focused-workspace = #ebdbb2
@@ -84,7 +88,9 @@ main = #DA5D49
 ; label-unfocused-foreground = #ebdbb2
 ; label-unfocused-background = #9932302f
 
-###### gruvbox grey colour scheme 
+;================================================
+;          GRUVBOX GREY COLOUR SCHEME
+;================================================
 xwindow-colour = #3c3936
 time-colour = #3c3936
 music-colour = #3c3936
@@ -114,55 +120,9 @@ label-unfocused-foreground = #7c6f64
 label-unfocused-background = #3c3936
 label-separator-foreground = #3c3936
 
-####### orange progression scheme
-;active-focused-workspace = #8ec07c
-;time-colour = #fabd2f
-;music-colour = #fba11c
-;sound-colour = #f17e23
-;date-colour = #d35721
-;wifi-colour = #b14424
-;battery-colour = #7b2c13
-;text-colour = #ebdbb2
-;time-icon = #DA5D49
-;music-icon = #DA5D49
-;sound-icon = #DA5D49
-;date-icon = #DA5D49
-;wifi-icon = #DA5D49
-;battery-icon = #DA5D49
-
-####### red orange scheme
-;active-focused-workspace = #8ec07c
-;time-colour = #fba11c
-;music-colour = #fb4934
-;sound-colour = #fba11c
-;date-colour = #fb4934
-;wifi-colour = #fba11c
-;battery-colour = #fb4934
-;text-colour = #ebdbb2
-;time-icon = #DA5D49
-;music-icon = #DA5D49
-;sound-icon = #DA5D49
-;date-icon = #DA5D49
-;wifi-icon = #DA5D49
-;battery-icon = #DA5D49
-
-####### yellow/pinkish progression scheme
-;active-focused-workspace = #DA5D49
-;time-colour = #DC8460
-;music-colour = #F1AD64
-;sound-colour = #E58457
-;date-colour = #D45B48
-;wifi-colour = #AA353E
-;battery-colour = #80152F
-;text-colour = #ebdbb2
-;time-icon = #0a0a0a
-;music-icon = #0a0a0a
-;sound-icon = #0a0a0a
-;date-icon = #0a0a0a
-;wifi-icon = #0a0a0a
-;battery-icon = #DA5D49
-
-####### transparent theme
+;================================================
+;        TRANSPARENT ORANGEY/PINK SCHEME
+;================================================
 ; active-focused-workspace = ${colors.main}
 ; time-colour = #66000000
 ; music-colour = #66000000
@@ -178,7 +138,9 @@ label-separator-foreground = #3c3936
 ; wifi-icon = ${colors.main}
 ; battery-icon = ${colors.main}
 
-####### transparent rainbow theme
+;================================================
+;          TRANSPARENT RAINBOW SCHEME
+;================================================
 ; active-focused-workspace = ${colors.main}
 ; time-colour = #66000000
 ; music-colour = #66000000
@@ -205,6 +167,9 @@ label-separator-foreground = #3c3936
 #text-colour = #000000
 ;text-colour = #ebdbb2
 
+;================================================
+;                      BAR
+;================================================
 [bar/example]
 bottom = false
 monitor = ${env:MONITOR:}
@@ -241,13 +206,8 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=13;3
 font-4 = Hack:pixelsize=10;3
 font-5 = Symbols Nerd Font:style=Bold:size=17;4
-; font-0 = Hack:pixelsize=10;3
-; font-1 = FontAwesome:pixelsize=13;3
-; font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
-; font-3 = siji:pixelsize=10;1
 
 modules-left = lefti3 i3 righti3 space leftXwindow xwindow rightXwindow
-;modules-center = date
 modules-center = leftTime time rightTime
 # Set this one if want arrows between
 ; modules-right = left4 musicPlayer left0 pulseaudio left1 date left2 wireless-network left3 battery-one battery-zero
@@ -264,13 +224,9 @@ module-margin-right = 0
 tray-padding = 2
 tray-background = ${colors.background} 
 
-;wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -278,7 +234,9 @@ tray-background = ${colors.background}
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-####### rounded modules 
+;================================================
+;               ROUNDED MODULES
+;================================================
 [module/space]
 type = custom/text
 content =  " "
@@ -373,6 +331,9 @@ type = custom/text
 content = %{T2}%{T-}
 content-foreground = ${colors.battery-colour}
 
+;================================================
+;                ARROW MODULES
+;================================================
 [module/left4]
 type = custom/text
 content-background = ${colors.background}
@@ -403,6 +364,9 @@ content-background = ${colors.wifi-colour}
 content-foreground = ${colors.battery-colour}
 content = "%{T3}%{T-}"
 
+;================================================
+;                    MUSIC
+;================================================
 [module/musicPlayer]
 type = custom/script
 exec = ~/.config/polybar/music_player.sh
@@ -416,6 +380,9 @@ format-prefix = "   "
 format-suffix = " "
 format-prefix-foreground = ${colors.music-icon} 
 
+;================================================
+;                    XWINDOW
+;================================================
 [module/xwindow]
 type = internal/xwindow
 # if no background
@@ -429,67 +396,9 @@ format-foreground = ${colors.xwindow-text}
 ; format-background = #d65d03 darker orange
 format-background = ${colors.xwindow-colour}
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-;label-focused = %index%
-label-focused = %name%
-;label-focused-background = ${colors.background-alt}
-label-focused-background = ${colors.active-focused-workspace}
-;label-focused-background = #3a3937
-;label-focused-underline= ${colors.primary}
-label-focused-underline= 
-label-focused-padding = 4
-;label-focused-padding = 2
-
-;label-occupied = %index%
-label-occupied = %name%
-label-occupied-padding = 4
-;label-occupied-padding = 2
-
-;label-urgent = %index%!
-label-urgent = %name%!
-label-urgent-background = ${colors.alert}
-;label-urgent-background = 
-label-urgent-foreground = ${colors.alert} 
-label-urgent-padding = 4
-;label-urgent-padding = 2
-
-;label-empty = %index%
-label-empty = %name%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 4
-;label-empty-padding = 2
-
-; Separator in between workspaces
-label-separator = |
-
+;================================================
+;                  I3 LAYOUT
+;================================================
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -538,98 +447,12 @@ label-urgent-foreground = #fb49934
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-label-separator = %{T2}%{T-}%{T2}%{T-}
+label-separator = %{T2}%{T-} %{T2}%{T-}
 label-separator-foreground = ${colors.label-separator-foreground}
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage:2%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
-
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interface = eno1
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
+;================================================
+;                     TIME
+;================================================
 [module/time]
 type = internal/date
 interval = 5
@@ -649,6 +472,9 @@ label = %date% %time%
 
 format-background = ${colors.time-colour}
 
+;================================================
+;                    DATE
+;================================================
 [module/date]
 type = internal/date
 interval = 5
@@ -675,6 +501,9 @@ exec = /home/mina/.config/polybar/cal.sh
 tail = true
 click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
 
+;================================================
+;                 AUDIO VOLUME
+;================================================
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -687,59 +516,44 @@ label-volume-foreground = ${colors.sound-icon}
 label-muted = "  "
 label-muted-foreground = #666
 
-#label-volume-underline = #a300cc
-
-bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.text-colour} 
-bar-volume-foreground-1 = ${colors.text-colour} 
-bar-volume-foreground-2 = ${colors.text-colour}  
-bar-volume-foreground-3 = ${colors.text-colour} 
-bar-volume-foreground-4 = ${colors.text-colour} 
-bar-volume-foreground-5 = ${colors.text-colour} 
-bar-volume-foreground-6 = ${colors.text-colour}
+bar-volume-width = 8
+bar-volume-foreground-0 = ${colors.sound-icon} 
+bar-volume-foreground-1 = ${colors.sound-icon} 
+bar-volume-foreground-2 = ${colors.sound-icon}  
+bar-volume-foreground-3 = ${colors.sound-icon} 
+bar-volume-foreground-4 = ${colors.sound-icon} 
+bar-volume-foreground-5 = ${colors.sound-icon} 
+bar-volume-foreground-6 = ${colors.sound-icon}
+; bar-volume-foreground-0 = ${colors.text-colour} 
+; bar-volume-foreground-1 = ${colors.text-colour} 
+; bar-volume-foreground-2 = ${colors.text-colour}  
+; bar-volume-foreground-3 = ${colors.text-colour} 
+; bar-volume-foreground-4 = ${colors.text-colour} 
+; bar-volume-foreground-5 = ${colors.text-colour} 
+; bar-volume-foreground-6 = ${colors.text-colour}
 bar-volume-gradient = false
+; bar-volume-indicator =  
 bar-volume-indicator = 
 bar-volume-indicator-font = 2
 bar-volume-indicator-foreground = ${colors.text-colour}
-bar-volume-fill = ─
+bar-volume-fill = 
+; bar-volume-fill = ─
+; bar-volume-fill = %{T5}•
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = 
+; bar-volume-empty = ─
+; bar-volume-empty = %{T5}•
 bar-volume-empty-font = 2
 
-bar-volume-empty-foreground = #bead93
-;bar-volume-empty-foreground = #665c54
+; bar-volume-empty-foreground = #bead93
+bar-volume-empty-foreground = #665c54
 
 format-volume-background = ${colors.sound-colour}
 format-muted-background = ${colors.sound-colour}
 
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
+;================================================
+;                   BATTERY
+;================================================
 [module/battery-zero]
 type = internal/battery
 battery = BAT0
@@ -749,10 +563,11 @@ format-full = "  "
 format-full-foreground = ${colors.battery-icon}
 format-full-background = ${colors.battery-colour}
 
-format-charging = <animation-charging> <label-charging>
+; format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
 #format-charging-underline = #ffd000
 label-charging =  %percentage% 
-label-charging-foreground = #ebdbb2
+label-charging-foreground = ${colors.battery-icon}
 
 #format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
@@ -796,10 +611,11 @@ format-full = "  "
 format-full-foreground = ${colors.battery-icon}
 format-full-background = ${colors.battery-colour}
 
-format-charging = <animation-charging> <label-charging>
+; format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
 #format-charging-underline = #ffd000
 label-charging =  %percentage%
-label-charging-foreground = #ebdbb2
+label-charging-foreground = ${colors.battery-icon}
 
 #format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
@@ -834,54 +650,9 @@ ramp-capacity-background = ${colors.battery-colour}
 format-charging-background = ${colors.battery-colour} 
 label-charging-background = ${colors.battery-colour} 
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
+;================================================
+; WIFI
+;================================================
 [module/wireless-network]
 type = internal/network
 interface = wlp4s0
@@ -899,23 +670,5 @@ label-disconnected-foreground = #666
 label-connected-background = ${colors.wifi-colour}
 label-disconnected-background = ${colors.wifi-colour}
 
-#[module/kdeconnect]  
-#type = custom/script  
-#exec = "/home/mina/.config/polybar/polybar-kdeconnect.sh -d"  
-#tail = true
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
-
-[global/wm]
-;margin-top = 5
-;margin-bottom = 5
-margin-top = 0
-margin-bottom = 0
 
 ; vim:ft=dosini

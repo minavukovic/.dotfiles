@@ -37,7 +37,8 @@ URxvt.foreground: t_foreground
 !rofi.bw: 0
 !rofi.auto-select: true
 
-*.color0: t_background
+/* *.color0: t_background */
+*.color0: #101010
 
 ! sxiv
 Sxiv.background: #121212
