@@ -1,3 +1,6 @@
+#================================================
+#                 WALLPAPER
+#================================================
 # set $background "gruvbox.png"
 set $background "splash.jpeg"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
@@ -8,9 +11,14 @@ exec_always feh --bg-fill /home/mina/Pictures/$background
 
 # same wallpaper for both monitors
 bindsym $mod+Control+Shift+b exec --no-startup-id ~/.config/i3/randwallpaper.sh
+
 # wallpaper picker
 bindsym $mod+Control+Shift+n exec --no-startup-id sxiv -tbo -s f -N "Wallpapers" /home/mina/Pictures | xargs /home/mina/.config/i3/setwallpaper.sh
 
+
+#================================================
+#               MAIN CONFIG
+#================================================
 set $mod Mod4
 set $alt mod1
 
@@ -25,16 +33,11 @@ gaps outer 1
 title_align center
 smart_gaps on
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+# kill focused window
+bindsym $alt+Shift+q kill
+bindsym $mod+Shift+q kill
+# kill with mod and middle button on mouse
+bindsym --whole-window $mod+button2 kill
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -56,12 +59,10 @@ bindsym $alt+KP_Enter exec --no-startup-id st
 # bindsym $mod+KP_Enter exec --no-startup-id alacritty
 # bindsym $alt+KP_Enter exec --no-startup-id alacritty
 
-# kill focused window
-bindsym $alt+Shift+q kill
-bindsym $mod+Shift+q kill
-# kill with mod and middle button on mouse
-bindsym --whole-window $mod+button2 kill
 
+#================================================
+#                SYSTEM SEARCH 
+#================================================
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec dmenu_run -i -l 5 -fn Hack-14 -nb '#000000' -nf '#f46b42' -sb '#353532' -sf '#edd7d0'
@@ -76,30 +77,23 @@ bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -p
 # rofi file search
 bindsym $mod+Control+Shift+d exec --no-startup-id xdg-open "$(locate home | rofi -lines 10 -theme blocks.rasi -padding 0 -dmenu -i -p "locate:")"
 
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
+#================================================
+#                   MOVEMENT
+#================================================
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
-
 # use arrow keys to switch workspaces
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
+
 # use < and > to move left and right in workspaces
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
+
 # move only on current output
 bindsym $alt+Left workspace prev_on_output
 bindsym $alt+Right workspace next_on_output
@@ -128,9 +122,10 @@ bindsym $mod+z split h
 # split in vertical orientation
 bindsym $mod+x split v
 
-# toggle where to open new window
-#bindsym $mod+x split toggle; exec notify-send "toggle"
 
+#================================================
+#                   VIEW
+#================================================
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -145,54 +140,15 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+Control+space focus mode_toggle
 
-# focus the parent container
-#bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
 # switch mouse focus across monitors
 bindsym $mod+space focus output left
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
+#================================================
+#                 WORKSPACES
+#================================================
 set $laptop eDP1
 set $hdmi HDMI2
-
-# switch to workspace
-# bindsym $mod+1 workspace $ws1
-# bindsym $mod+2 workspace $ws2
-# bindsym $mod+3 workspace $ws3
-# bindsym $mod+4 workspace $ws4
-# bindsym $mod+5 workspace $ws5
-# bindsym $mod+6 workspace $ws6
-# bindsym $mod+7 workspace $ws7
-# bindsym $mod+8 workspace $ws8
-# bindsym $mod+9 workspace $ws9
-# bindsym $mod+0 workspace $ws10
-
-# move focused container to workspace
-# bindsym $mod+Shift+1 move container to workspace $ws1
-# bindsym $mod+Shift+2 move container to workspace $ws2
-# bindsym $mod+Shift+3 move container to workspace $ws3
-# bindsym $mod+Shift+4 move container to workspace $ws4
-# bindsym $mod+Shift+5 move container to workspace $ws5
-# bindsym $mod+Shift+6 move container to workspace $ws6
-# bindsym $mod+Shift+7 move container to workspace $ws7
-# bindsym $mod+Shift+8 move container to workspace $ws8
-# bindsym $mod+Shift+9 move container to workspace $ws9
-# bindsym $mod+Shift+0 move container to workspace $ws10
 
 # open new workspace
 bindsym $alt+a workspace number 30
@@ -219,9 +175,6 @@ bindsym $alt+0 workspace number 20
 bindsym $alt+8 workspace number 18
 bindsym $alt+1 workspace number 11
 bindsym $alt+2 workspace number 12
-
-#workspace number 2 output $laptop
-#workspace number 11 output $laptop
 
 # move to workspace and don't snap to it
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -441,7 +394,8 @@ exec_always libinput-gestures-setup start
 bindsym $mod+Control+Shift+l exec --no-startup-id ~/.config/i3/Latex-picker/dmenulatex-type.sh
 
 # firefox, firefox dev, chrome shortcuts
-bindsym $mod+c exec firefox
+# bindsym $mod+c exec firefox
+bindsym $mod+c exec brave
 bindsym $mod+Shift+c exec firefox-developer-edition
 #bindsym $mod+c exec --no-startup-id google-chrome-stable
 bindsym $mod+b exec chromium
