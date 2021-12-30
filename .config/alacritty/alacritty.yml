@@ -23,7 +23,7 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 
-#window:
+window:
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -45,8 +45,8 @@
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
+  padding:
+   x: 5
   #  y: 0
 
   # Spread additional padding evenly around the terminal content.
@@ -102,7 +102,7 @@
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
   #normal:
     # Font family
@@ -150,7 +150,7 @@
     #style: Bold Italic
 
   # Point size
-  #size: 11.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -179,9 +179,8 @@
 colors:
   # Default colors
   primary:
-    # background: '#1d1f21'
     # foreground: '#c5c8c6'
-    background: '#000000'
+    background: '#141617'
     foreground: '#ebdbb2'
 
  # Normal colors
@@ -193,7 +192,8 @@ colors:
     blue:    '#458588'
     magenta: '#b16286'
     cyan:    '#689d6a'
-    white:   '#a89984'
+    # white:   '#a89984'
+    white:   '#ebdbb2'
 
   # Bright colors
   bright:
@@ -220,9 +220,9 @@ colors:
   #
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
+  cursor:
+   text: CellBackground
+   cursor: CellForeground
 
   # Vi mode cursor colors
   #
@@ -352,7 +352,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.0
+background_opacity: 0.9
 
 #selection:
   # This string contains all characters that are used as separators for

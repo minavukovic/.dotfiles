@@ -10,11 +10,12 @@ configuration {
 
 
 * {
-    true-transparent: #00000078;
-    background-color: #00000065;
-    border-color:     #00000000;
+    true-transparent: var(background-color);
+    background-color: rgba ( 16, 17, 18, 20 % );
+    border-color:     rgba(29, 32, 33, 80%);
     text-color:       #ebdbb2;
-    selected-color:   #DA5D49;
+    /* selected-color:   #DA5D49; */
+	selected-color: #fe8f56;
 
     default-border-radius: 10px;
     default-margin: 3px 3px;

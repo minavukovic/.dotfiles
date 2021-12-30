@@ -3,6 +3,8 @@
 #================================================
 # set $background "gruvbox.png"
 set $background "splash.jpeg"
+# set $background "streetnight.jpg"
+# set $background "swirl.jpg"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
 exec_always feh --bg-fill /home/mina/Pictures/$background
 
@@ -43,21 +45,22 @@ bindsym --whole-window $mod+button2 kill
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id st
-bindsym $alt+Return exec --no-startup-id st
-# bindsym $mod+Return exec --no-startup-id alacritty
-# bindsym $alt+Return exec --no-startup-id alacritty
+# bindsym $mod+Return exec --no-startup-id st
+# bindsym $alt+Return exec --no-startup-id st
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $alt+Return exec --no-startup-id alacritty
+
 # floating terminal
-bindsym $mod+Shift+Return exec --no-startup-id st -class=floating_st
-bindsym $alt+Shift+Return exec --no-startup-id st -class=floating_st
-for_window [class="floating_st"] floating enable
-bindsym $mod+KP_Enter exec --no-startup-id st
-bindsym $alt+KP_Enter exec --no-startup-id st
-# bindsym $mod+Shift+Return exec alacritty -title=floating_alacritty
-# bindsym $alt+Shift+Return exec alacritty -title=floating_alacritty
-# for_window [title="floating_alacritty"] floating enable
-# bindsym $mod+KP_Enter exec --no-startup-id alacritty
-# bindsym $alt+KP_Enter exec --no-startup-id alacritty
+# bindsym $mod+Shift+Return exec --no-startup-id st -class=floating_st
+# bindsym $alt+Shift+Return exec --no-startup-id st -class=floating_st
+# for_window [class="floating_st"] floating enable
+# bindsym $mod+KP_Enter exec --no-startup-id st
+# bindsym $alt+KP_Enter exec --no-startup-id st
+bindsym $mod+Shift+Return exec alacritty -title=floating_alacritty
+bindsym $alt+Shift+Return exec alacritty -title=floating_alacritty
+for_window [title="floating_alacritty"] floating enable
+bindsym $mod+KP_Enter exec --no-startup-id alacritty
+bindsym $alt+KP_Enter exec --no-startup-id alacritty
 
 
 #================================================
@@ -347,14 +350,15 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 # DUAL MONITOR SETUP
 # DUAL ON
 # hdmi
-bindsym $mod+F3 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --primary --mode 2560x1440 --pos 1920x0 --rotate normal --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
-
-
+#bindsym $mod+F3 exec xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --primary --mode 2560x1440 --pos 1920x0 --rotate normal --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
+# bindsym $mod+F3 exec xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --primary --mode 2560x1440 --pos 1920x0 --rotate normal; restart ~/.config/polybar/launch.sh
+bindsym $mod+F3 exec xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --primary --mode 2560x1440 --pos 1978x0 --rotate normal; restart ~/.config/polybar/launch.sh
 
 # DUAL OFF
 #hdmi
-bindsym $mod+F4 exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
-bindsym $mod+F2 exec xrandr --auto; exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+#bindsym $mod+F4 exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off; restart ~/.config/polybar/launch.sh
+#bindsym $mod+F2 exec xrandr --auto; exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+bindsym $mod+F4 exec xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off; restart ~/.config/polybar/launch.sh
 
 # BRIGHTNESS
 #dim
@@ -371,7 +375,8 @@ bindsym $mod+Control+t exec ~/.trackpad.sh
 #exec --no-startup-id redshift-gtk &
 
 # Compton (transpacency)
-exec_always picom
+# exec_always picom
+exec_always --no-startup-id picom --experimental-backends
 
 # lock after lid close
 exec --no-startup-id xss-lock -- ~/.config/i3/.lock.sh
@@ -494,3 +499,5 @@ for_window [class="kate"] floating enable
 
 # sxiv wallpaper picker properties
 for_window [class="Sxiv"] floating enable
+
+exec always --no-startup-id nm-applet & disown

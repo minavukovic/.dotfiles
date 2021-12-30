@@ -12,7 +12,7 @@ set showmode
 set ignorecase
 set nojoinspaces
 set nowrap
-set textwidth=120
+" set textwidth=120
 set linebreak "set wrap to insert linebreak
 set wildmenu "command autocompletion
 set backspace=indent,eol,start
@@ -22,6 +22,7 @@ set showmatch "highlight matching brackets
 set relativenumber
 set cursorline
 syntax on
+set noshowmode "hide the default vim status bar
 
 " " Change mouse on insert mode
 " let &t_SI = "\e[6 q"
@@ -112,7 +113,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:goyo_linenr = 1
 
 " nerd tree config
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 autocmd vimenter * wincmd l
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -121,8 +122,12 @@ let g:vimtex_view_method = 'zathura'
 let g:latex_view_general_viewer = 'zathura'
 
 " airline status config
-let g:airline_theme='gruvbox'
+let g:airline_theme='biogoo'
 " let g:airline_left_sep = '▶'
+" let g:airline_left_sep = ''
+" let g:airline_right_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline_powerline_fonts = 1
 
 
@@ -153,6 +158,9 @@ inoremap <tab><Space> <Esc>/<++><Enter>"_c4l
 " disable these shortcuts
 nnoremap Q <nop>
 nnoremap <C-s> <nop>
+
+" remove highlight search when finished by hitting enter again when done
+nnoremap <CR> :noh<CR><CR>
 
 " ---------------------------------- Shortcuts ----------------------------------
 " let mapleader=" "
