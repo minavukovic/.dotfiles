@@ -10,6 +10,11 @@
     background-color: var(bg);
     ac:               rgba ( 254, 143, 86, 75 % );
 }
+
+configuration {
+    display-drun: "Wi-Fi SSID";
+}
+
 window {
     padding:          10;
     height:           25%;

@@ -72,13 +72,13 @@ bindsym $alt+KP_Enter exec --no-startup-id alacritty
 #bindsym $mod+d exec --no-startup-id rofi -show run -display-run -theme config.rasi ""
 
 # rofi search
-bindsym $mod+d exec rofi -modi "window#run#ssh" -show drun -theme blocks.rasi -location 0
+bindsym $mod+d exec rofi -modi "window#run#ssh" -show drun -theme style9.rasi -location 0
 # rofi show open windows
-bindsym $alt+Shift+Tab exec rofi -show "window" -show drun -theme blocks.rasi -location 0
+bindsym $alt+Shift+Tab exec rofi -show "window" -show drun -theme style9.rasi -location 0
 # rofi search script
-bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme blocks.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
+bindsym $mod+Control+d exec --no-startup-id rofi -lines 10 -theme style9.rasi -padding 0 -show search -modi search:~/Misc/scripts/rofi-web-search/rofi-web-search.py -i -p "Search: "
 # rofi file search
-bindsym $mod+Control+Shift+d exec --no-startup-id xdg-open "$(locate home | rofi -lines 10 -theme blocks.rasi -padding 0 -dmenu -i -p "locate:")"
+bindsym $mod+Control+Shift+d exec --no-startup-id xdg-open "$(locate home | rofi -lines 10 -theme style9.rasi -padding 0 -dmenu -i -p "locate:")"
 
 #================================================
 #                   MOVEMENT

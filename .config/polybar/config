@@ -664,8 +664,8 @@ label-connected-foreground = ${colors.wifi-text}
 format-connected-foreground = ${colors.wifi-icon} 
 format-connected-background = ${colors.wifi-colour}
 
-label-disconnected =  disconnected
-format-disconnected = %{A1:/home/mina/Misc/scripts/rofi-wifi-menu/rofi-wifi-menu.sh:} <label-disconnected>%{A}
+label-disconnected = " disconnected"
+format-disconnected = %{A1:/home/mina/Misc/scripts/rofi-wifi-menu/rofi-wifi-menu.sh:}<label-disconnected>%{A}
 label-disconnected-foreground = #666
 
 label-connected-background = ${colors.wifi-colour}
