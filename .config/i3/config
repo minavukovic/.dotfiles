@@ -2,7 +2,8 @@
 #                 WALLPAPER
 #================================================
 # set $background "gruvbox.png"
-set $background "splash.jpeg"
+# set $background "splash.jpeg"
+set $background "palmtrees.jpg"
 # set $background "streetnight.jpg"
 # set $background "swirl.jpg"
 #exec_always feh --bg-scale /home/mina/Pictures/$background
@@ -28,8 +29,8 @@ set $alt mod1
 # is used in the bar {} block below.
 font pango:GoogleSans-Regular 10
 
-# Gaps: 4
-for_window [class="^.*"] border pixel 2
+# Gaps: 2
+for_window [class="^.*"] border pixel 3
 gaps inner 10
 gaps outer 1
 title_align center

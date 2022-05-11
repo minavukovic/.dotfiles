@@ -220,7 +220,7 @@ module-margin-left = 0
 module-margin-right = 0
 
 
-; tray-position = right
+tray-position = right
 tray-padding = 2
 tray-background = ${colors.background} 
 
@@ -331,38 +331,39 @@ type = custom/text
 content = %{T2}%{T-}
 content-foreground = ${colors.battery-colour}
 
+
 ;================================================
 ;                ARROW MODULES
 ;================================================
-[module/left4]
-type = custom/text
-content-background = ${colors.background}
-content-foreground = ${colors.music-colour}
-content = "%{T3}%{T-}"
+; [module/left4]
+; type = custom/text
+; content-background = ${colors.background}
+; content-foreground = ${colors.music-colour}
+; content = "%{T3}%{T-}"
 
-[module/left0]
-type = custom/text
-content-background = ${colors.music-colour}
-content-foreground = ${colors.sound-colour}
-content = "%{T3}%{T-}"
+; [module/left0]
+; type = custom/text
+; content-background = ${colors.music-colour}
+; content-foreground = ${colors.sound-colour}
+; content = "%{T3}%{T-}"
 
-[module/left1]
-type = custom/text
-content-background = ${colors.sound-colour}
-content-foreground = ${colors.date-colour}
-content = "%{T3}%{T-}"
+; [module/left1]
+; type = custom/text
+; content-background = ${colors.sound-colour}
+; content-foreground = ${colors.date-colour}
+; content = "%{T3}%{T-}"
 
-[module/left2]
-type = custom/text
-content-background = ${colors.date-colour}
-content-foreground = ${colors.wifi-colour}
-content = "%{T3}%{T-}"
+; [module/left2]
+; type = custom/text
+; content-background = ${colors.date-colour}
+; content-foreground = ${colors.wifi-colour}
+; content = "%{T3}%{T-}"
 
-[module/left3]
-type = custom/text
-content-background = ${colors.wifi-colour}
-content-foreground = ${colors.battery-colour}
-content = "%{T3}%{T-}"
+; [module/left3]
+; type = custom/text
+; content-background = ${colors.wifi-colour}
+; content-foreground = ${colors.battery-colour}
+; content = "%{T3}%{T-}"
 
 ;================================================
 ;                    MUSIC
@@ -564,14 +565,16 @@ format-full-foreground = ${colors.battery-icon}
 format-full-background = ${colors.battery-colour}
 
 ; format-charging = <animation-charging> <label-charging>
-format-charging = <label-charging>
+; format-charging = <label-charging>
+format-charging= %{A1:/home/mina/.config/polybar/rofi-battery/rofi-battery-menu.sh 0:}<ramp-capacity>%{A}
 #format-charging-underline = #ffd000
 label-charging =  %percentage% 
 label-charging-foreground = ${colors.battery-icon}
 
 #format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
-format-discharging = <ramp-capacity>
+; format-discharging = <ramp-capacity>
+format-discharging = %{A1:/home/mina/.config/polybar/rofi-battery/rofi-battery-menu.sh 0:}<ramp-capacity>%{A}
 #format-discharging-underline = ${self.format-charging-underline}
 label-discharging = 
 
@@ -612,14 +615,16 @@ format-full-foreground = ${colors.battery-icon}
 format-full-background = ${colors.battery-colour}
 
 ; format-charging = <animation-charging> <label-charging>
-format-charging = <label-charging>
+; format-charging = <label-charging>
+format-charging= %{A1:/home/mina/.config/polybar/rofi-battery/rofi-battery-menu.sh 1:}<ramp-capacity>%{A}
 #format-charging-underline = #ffd000
 label-charging =  %percentage%
 label-charging-foreground = ${colors.battery-icon}
 
 #format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging = <label-discharging> <ramp-capacity> <label-discharging>
-format-discharging = <ramp-capacity>
+format-discharging = %{A1:/home/mina/.config/polybar/rofi-battery/rofi-battery-menu.sh 1:}<ramp-capacity>%{A}
+; format-discharging = <ramp-capacity>
 #format-discharging-underline = ${self.format-charging-underline}
 label-discharging = 
 

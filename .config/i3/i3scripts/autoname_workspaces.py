@@ -68,16 +68,21 @@ WINDOW_ICONS = {
     'evolution': fa.icons['envelope'],
     'feh': fa.icons['image'],
     'file-roller': fa.icons['compress'],
+    'filezilla': fa.icons['server'],
     'firefox': fa.icons['firefox'],
     'firefoxdeveloperedition': fa.icons['globe'],
     'firefox-esr': fa.icons['firefox'],
+    'gimp': fa.icons['image'],
     'gimp-2.8': fa.icons['image'],
     'gnome-control-center': fa.icons['toggle-on'],
     'gnome-terminal-server': fa.icons['terminal'],
     'google-chrome': fa.icons['chrome'],
+    'prusa-slicer': fa.icons['cube'],
     'gpick': fa.icons['eye-dropper'],
     'imv': fa.icons['image'],
+    'insomnia': fa.icons['globe'],
     'java': fa.icons['code'],
+    'jetbrains-idea': fa.icons['code'],
     'jetbrains-studio': fa.icons['code'],
     'kate': fa.icons['edit'],
     'keepassxc': fa.icons['key'],
@@ -98,6 +103,8 @@ WINDOW_ICONS = {
     'postman': fa.icons['space-shuttle'],
     'qutebrowser': fa.icons['space-shuttle'],
     'rhythmbox': fa.icons['play'],
+    'robo3t': fa.icons['database'],
+    'signal': fa.icons['comment'],
     'simplescreenrecorder': fa.icons['video'],
     'slack': fa.icons['slack'],
     'slic3r.pl': fa.icons['cube'],
@@ -142,8 +149,8 @@ def icon_for_window(window):
             cls = cls.lower()  # case-insensitive matching
             if cls in WINDOW_ICONS:
                 return WINDOW_ICONS[cls]
-    logging.info(
-        'No icon available for window with classes: %s' % str(classes))
+    logging.info('No icon available for window with classes: %s' %
+                 str(classes))
     return DEFAULT_ICON
 
 
@@ -172,12 +179,13 @@ def rename_workspaces(i3, icon_list_format='default'):
         n += 1
 
         new_name = construct_workspace_name(
-            NameParts(
-                num=new_num, shortname=name_parts.shortname, icons=new_icons))
+            NameParts(num=new_num,
+                      shortname=name_parts.shortname,
+                      icons=new_icons))
         if workspace.name == new_name:
             continue
-        i3.command(
-            'rename workspace "%s" to "%s"' % (workspace.name, new_name))
+        i3.command('rename workspace "%s" to "%s"' %
+                   (workspace.name, new_name))
 
 
 # Rename workspaces to just numbers and shortnames, removing the icons.
@@ -185,13 +193,13 @@ def on_exit(i3):
     for workspace in i3.get_tree().workspaces():
         name_parts = parse_workspace_name(workspace.name)
         new_name = construct_workspace_name(
-            NameParts(
-                num=name_parts.num, shortname=name_parts.shortname,
-                icons=None))
+            NameParts(num=name_parts.num,
+                      shortname=name_parts.shortname,
+                      icons=None))
         if workspace.name == new_name:
             continue
-        i3.command(
-            'rename workspace "%s" to "%s"' % (workspace.name, new_name))
+        i3.command('rename workspace "%s" to "%s"' %
+                   (workspace.name, new_name))
     i3.main_quit()
     sys.exit(0)
 
@@ -211,13 +219,11 @@ if __name__ == '__main__':
         '--icon_list_format',
         type=str,
         default='default',
-        help=
-        "The formatting of the list of icons."
+        help="The formatting of the list of icons."
         "Accepted values:"
         "    - default: no formatting,"
         "    - mathematician: factorize with superscripts (e.g. aababa -> a⁴b²),"
-        "    - chemist: factorize with subscripts (e.g. aababa -> a₄b₂)."
-    )
+        "    - chemist: factorize with subscripts (e.g. aababa -> a₄b₂).")
     args = parser.parse_args()
 
     RENUMBER_WORKSPACES = not args.norenumber_workspaces

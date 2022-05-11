@@ -153,7 +153,7 @@ xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
 " jump to <++>
-inoremap <tab><Space> <Esc>/<++><Enter>"_c4l
+inoremap ]<Space> <Esc>/<++><Enter>"_c4l
 
 " disable these shortcuts
 nnoremap Q <nop>
